@@ -1,0 +1,11 @@
+{
+  "question": "如何调试我的第一个 LangChain 应用？",
+  "ground_truth": "设置 LangSmith 追踪以调试你的第一个 LangChain 应用，并按照追踪快速入门指南开始使用。建议同时设置 LangSmith Engine，它会监控你的追踪、检测问题并提出修复建议。",
+  "answer_span": "Set up LangSmith tracing to debug your first LangChain app. Follow the tracing quickstart to get started. We recommend you also set up LangSmith Engine which monitors your traces, detects issues, and proposes fixes.",
+  "source": [
+    "03_install.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

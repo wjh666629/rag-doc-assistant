@@ -1,0 +1,11 @@
+{
+  "question": "根据文档，在集成测试中控制成本和复杂度的三个建议是什么？",
+  "ground_truth": "使用较小模型；设置maxTokens；限制测试范围。",
+  "answer_span": "Use smaller models: ... Set maxTokens: ... Limit test scope: ...",
+  "source": [
+    "26_integration-testing.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

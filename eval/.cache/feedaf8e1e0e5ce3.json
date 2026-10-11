@@ -1,0 +1,11 @@
+{
+  "question": "单元测试如何在不使用 API 调用的情况下测试 agent 逻辑？",
+  "ground_truth": "使用内存中的假聊天模型（fixture）替换真实 LLM，脚本化精确的响应（文本、工具调用和错误），从而实现快速、免费、可重复的测试，无需 API 密钥。",
+  "answer_span": "By replacing the real LLM with an in-memory fake (AKA fixture), you can script exact responses (text, tool calls, and errors) so tests are fast, free, and repeatable without API keys.",
+  "source": [
+    "25_unit-testing.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

@@ -1,0 +1,19 @@
+[
+  {"question": "LangGraph 的 Graph API 和 Functional API 分别适合什么场景？", "ground_truth": "Graph API 适合需要显式节点与边、带分支/循环/持久化的复杂编排；Functional API 适合用普通 Python 控制流（if/for）表达、不需要显式建图的场景。", "source": ["34_graph-api.md", "36_functional-api.md", "49_choosing-apis.md"], "type": "综合", "origin": "manual", "notes": "需跨 2~3 篇文档对比"},
+  {"question": "如何给 LangGraph 加上跨会话的长期记忆？", "ground_truth": "通过 checkpointer 做线程内短期持久化，配合 Store（Long-term memory）跨线程保存与检索记忆；两者层次不同。", "source": ["38_persistence.md", "39_checkpointers.md", "40_add-memory.md", "41_stores.md"], "type": "综合", "origin": "manual", "notes": "跨 persistence/checkpointer/store 三块内容"},
+  {"question": "子图（subgraph）如何与父图共享状态？", "ground_truth": "子图作为节点嵌入父图，通过共享 state schema 中的 key 传递数据；若 key 不同需要在调用前后做转换。", "source": ["37_use-subgraphs.md"], "type": "综合", "origin": "manual"},
+  {"question": "create_agent 的 middleware 有哪些典型用法？", "ground_truth": "典型用法包括：模型调用前的日志/审计、失败重试、动态切换模型、上下文裁剪（summarization）、人工审批（human-in-the-loop）等，分 before_model / wrap_model_call / wrap_tool_call 等钩子。", "source": ["16_built-in.md", "17_custom.md", "15_overview.md"], "type": "综合", "origin": "manual", "notes": "需跨 built-in 与 custom 两篇"},
+  {"question": "流式输出在 LangGraph 里有哪几种粒度？", "ground_truth": "至少包括 updates（节点级增量）、messages（token 级）、custom（自定义事件）以及 debug 模式等多种 stream_mode。", "source": ["26_streaming.md", "42_streaming.md", "43_event-streaming.md"], "type": "综合", "origin": "manual"},
+  {"question": "LangGraph 里如何做人工介入（human-in-the-loop）？", "ground_truth": "用 interrupt() 在节点中暂停执行，等待外部输入后通过 Command(resume=...) 恢复；配合 checkpointer 保存暂停时的状态。", "source": ["44_interrupts.md", "46_use-time-travel.md"], "type": "综合", "origin": "manual"},
+  {"question": "持久化（persistence）和容错（fault tolerance）在 LangGraph 中是如何配合的？", "ground_truth": "checkpointer 在每个节点（super-step）后保存状态，节点失败后可从最近检查点恢复重放，实现容错与可回溯。", "source": ["38_persistence.md", "51_fault-tolerance.md", "39_checkpointers.md"], "type": "综合", "origin": "manual"},
+  {"question": "Agentic RAG 与朴素 RAG 的流程差别是什么？", "ground_truth": "Agentic RAG 把检索作为工具交给 agent 自主决定何时检索、检索几次、是否换查询，是循环/分支结构；朴素 RAG 是固定的检索一次再生成。", "source": ["47_agentic-rag.md", "31_overview.md"], "type": "综合", "origin": "manual"},
+
+  {"question": "DeepSeek 模型的训练数据规模是多少？", "ground_truth": "__REFUSAL__", "source": [], "type": "越界", "origin": "manual", "notes": "语料只讲如何通过 API 接入模型，不涉及训练数据"},
+  {"question": "如何用 LangGraph 做红烧肉的菜谱推荐？", "ground_truth": "__REFUSAL__", "source": [], "type": "越界", "origin": "manual"},
+  {"question": "LangChain 2028 年的发布路线图是什么？", "ground_truth": "__REFUSAL__", "source": [], "type": "越界", "origin": "manual"},
+  {"question": "这份语料里有没有讲 Kubernetes 集群运维？", "ground_truth": "__REFUSAL__", "source": [], "type": "越界", "origin": "manual"},
+  {"question": "BAAI/bge-small-zh-v1.5 模型的参数量是多少？", "ground_truth": "__REFUSAL__", "source": [], "type": "越界", "origin": "manual", "notes": "语料未涉及该 embedding 模型"},
+  {"question": "公司内部的报销流程怎么走？", "ground_truth": "__REFUSAL__", "source": [], "type": "越界", "origin": "manual"},
+  {"question": "LangGraph 支持哪些编程语言的官方 SDK（除 Python/JS 外）？", "ground_truth": "__REFUSAL__", "source": [], "type": "越界", "origin": "manual", "notes": "语料未给出该信息，期望拒答"},
+  {"question": "2026 年 LangChain 的融资额是多少？", "ground_truth": "__REFUSAL__", "source": [], "type": "越界", "origin": "manual"}
+]

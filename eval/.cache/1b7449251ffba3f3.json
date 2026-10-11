@@ -1,0 +1,11 @@
+{
+  "question": "在LangGraph工作流中使用中间件时，中间件是作为独立运行时运行的吗？",
+  "ground_truth": "不是。中间件不是在单独运行时中运行，其钩子在create_agent返回的编译后的LangGraph内部执行。可以将整个代理（包括中间件）作为节点或子图放入更大的StateGraph中，所有中间件钩子会继续运行。",
+  "answer_span": "Middleware is not a separate runtime: hooks run inside the compiled LangGraph that create_agent returns. You can drop the whole agent (middleware and all) into a larger StateGraph as a node or subgraph, and every middleware hook continues to run.",
+  "source": [
+    "15_overview.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

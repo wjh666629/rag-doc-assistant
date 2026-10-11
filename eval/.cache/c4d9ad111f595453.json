@@ -1,0 +1,11 @@
+{
+  "question": "在使用agent时如何实现结构化输出？",
+  "ground_truth": "使用 `create_agent` 来实现结构化输出；如果不在agent环境中直接对模型使用结构化输出，则参考 Models 文档。",
+  "answer_span": "This page covers structured output with agents using `create_agent`. To use structured output directly on a model (outside of agents), see Models - Structured output.",
+  "source": [
+    "09_structured-output.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

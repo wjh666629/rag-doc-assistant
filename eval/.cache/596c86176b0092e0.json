@@ -1,0 +1,11 @@
+{
+  "question": "为什么Agentic applications更倾向于集成？",
+  "ground_truth": "因为它们将多个组件链接在一起，并且必须处理由LLM的非确定性导致的不稳定性。",
+  "answer_span": "Agentic applications tend to lean more on integration because they chain multiple components together and must deal with flakiness due to the nondeterministic nature of LLMs.",
+  "source": [
+    "23_test.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

@@ -1,0 +1,11 @@
+{
+  "question": "代理在承担复杂工作时，中间件生态系统在哪些关键领域提供支持？",
+  "ground_truth": "提供工具、文件系统、沙箱和代码执行；摘要、记忆、技能和提示缓存；待办列表和子代理用于并行、隔离的工作；重试、回退和调用限制；PII检测和内容控制；以及在高影响操作前进行人工审批。",
+  "answer_span": "Tools, filesystem, sandboxes, and code execution; Summarization, memory, skills, and prompt caching; Todo lists and subagents for parallel, isolated work; Retries, fallbacks, and call limits; PII detection and content controls; Human-in-the-loop approval before high-impact actions",
+  "source": [
+    "04_agents.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

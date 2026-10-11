@@ -1,0 +1,11 @@
+{
+  "question": "如何将文档连接到所选的智能体？",
+  "ground_truth": "通过 MCP 连接这些文档到你的智能体，以获取实时答案。",
+  "answer_span": "[Connect these docs](/use-these-docs) to your agent of choice via MCP for real-time answers.",
+  "source": [
+    "03_install.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

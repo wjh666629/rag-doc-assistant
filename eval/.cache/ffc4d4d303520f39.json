@@ -1,0 +1,11 @@
+{
+  "question": "Evals 与集成测试（integration tests）的主要区别是什么？",
+  "ground_truth": "集成测试验证基本正确性，而 evals 根据参考或评分标准对智能体的行为进行评分，用于在更改提示词、工具或模型时发现回归问题。",
+  "answer_span": "Unlike integration tests that verify basic correctness, evals score agent behavior against a reference or rubric, making them useful for catching regressions when you change prompts, tools, or models.",
+  "source": [
+    "24_evals.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

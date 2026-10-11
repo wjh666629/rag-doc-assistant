@@ -1,0 +1,11 @@
+{
+  "question": "如果没有任何已设置的支持的 provider API key，应该怎么做？",
+  "ground_truth": "询问用户要使用哪个提供商，然后停下来等待他们创建密钥并在 shell 或 .env 文件中设置。不要发明、硬编码或提交 API 密钥。",
+  "answer_span": "If none is set, ask the user which provider to use, then stop and wait while they create a key and set it in the shell or a `.env` file. Do not invent, hardcode, or commit API keys.",
+  "source": [
+    "01_quickstart.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

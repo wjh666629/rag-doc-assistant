@@ -1,0 +1,11 @@
+{
+  "question": "根据文档，LangChain agent 调用的四个组成部分分别是什么？",
+  "ground_truth": "Context 是静态信息，如用户ID、数据库连接或其他依赖；Store 是用于长期记忆的 BaseStore 实例；Stream writer 是用于通过“custom”流模式流式传输信息的对象；Execution info 是当前执行的标识和重试信息（线程ID、运行ID、尝试次数）。",
+  "answer_span": "Context: static information like user id, db connections, or other dependencies for an agent invocation. Store: a BaseStore instance used for long-term memory. Stream writer: an object used for streaming information via the \"custom\" stream mode. Execution info: identity and retry information for the current execution (thread ID, run ID, attempt number).",
+  "source": [
+    "14_runtime.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

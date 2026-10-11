@@ -1,0 +1,11 @@
+{
+  "question": "在什么情况下应使用 `respond` 工具？",
+  "ground_truth": "仅在人类充当工具时使用，例如回答 `ask_user` 提示。不要用它来拒绝有副作用的工具，因为其消息会被视为成功的工具结果。",
+  "answer_span": "Use `respond` only when the human is acting as the tool, such as answering an `ask_user` prompt. Do not use `respond` to deny side-effecting tools, because its message is treated as a successful tool result.",
+  "source": [
+    "20_human-in-the-loop.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

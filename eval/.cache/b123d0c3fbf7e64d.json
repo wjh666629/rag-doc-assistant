@@ -1,0 +1,11 @@
+{
+  "question": "根据文档片段，Models 类别的主要用途是什么？",
+  "ground_truth": "AI reasoning and generation（AI 推理与生成）。",
+  "answer_span": "| **[Models](/oss/python/langchain/models)** | AI reasoning and generation | Chat models, LLMs, Embedding models | Text generation, reasoning, semantic understanding |",
+  "source": [
+    "28_component-architecture.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

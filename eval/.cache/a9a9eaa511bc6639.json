@@ -1,0 +1,11 @@
+{
+  "question": "LangChain 推荐使用什么方式来实现实时流式更新？",
+  "ground_truth": "对于新应用，推荐使用事件流（event streaming），即 LangChain v1.3 中引入的类型化投影 API。它提供每个投影（消息、值、工具调用、子图）独立的迭代器，可以独立消费，无需在 stream_mode 块上分支。",
+  "answer_span": "For new applications, we recommend [event streaming](/oss/python/langchain/event-streaming)—the typed-projection API introduced in LangChain v1.3.",
+  "source": [
+    "08_streaming.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

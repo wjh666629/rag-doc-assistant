@@ -1,0 +1,11 @@
+{
+  "question": "当非reducer状态字段发生冲突时，哪个中间件的值优先？",
+  "ground_truth": "最外层中间件的值优先。",
+  "answer_span": "The outermost middleware's value takes precedence on conflicting keys.",
+  "source": [
+    "17_custom.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

@@ -1,0 +1,709 @@
+[
+  {
+    "question": "如果没有任何已设置的支持的 provider API key，应该怎么做？",
+    "ground_truth": "询问用户要使用哪个提供商，然后停下来等待他们创建密钥并在 shell 或 .env 文件中设置。不要发明、硬编码或提交 API 密钥。",
+    "answer_span": "If none is set, ask the user which provider to use, then stop and wait while they create a key and set it in the shell or a `.env` file. Do not invent, hardcode, or commit API keys.",
+    "source": [
+      "01_quickstart.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 1
+  },
+  {
+    "question": "在快速入门中，第一步需要做什么？",
+    "ground_truth": "第一步是阅读指南，检测项目使用 Python 还是 TypeScript/JavaScript，然后获取并遵循匹配的页面，并将其视为包名、模型字符串和代码的准确来源。",
+    "answer_span": "Detect whether this project uses Python or TypeScript/JavaScript. Fetch and follow the matching page; treat it as the source of truth for package names, model strings, and code:",
+    "source": [
+      "01_quickstart.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 2
+  },
+  {
+    "question": "该文档片段提到可以在一个地方检查哪些内容？",
+    "ground_truth": "可以在一个地方检查追踪（traces）、工具调用（tool calls）、状态转换（state transitions）和延迟（latency）。",
+    "answer_span": "Inspect traces, tool calls, state transitions, and latency in one place.",
+    "source": [
+      "02_overview.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 3
+  },
+  {
+    "question": "如何将文档连接到所选的智能体？",
+    "ground_truth": "通过 MCP 连接这些文档到你的智能体，以获取实时答案。",
+    "answer_span": "[Connect these docs](/use-these-docs) to your agent of choice via MCP for real-time answers.",
+    "source": [
+      "03_install.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 6
+  },
+  {
+    "question": "代理在承担复杂工作时，中间件生态系统在哪些关键领域提供支持？",
+    "ground_truth": "提供工具、文件系统、沙箱和代码执行；摘要、记忆、技能和提示缓存；待办列表和子代理用于并行、隔离的工作；重试、回退和调用限制；PII检测和内容控制；以及在高影响操作前进行人工审批。",
+    "answer_span": "Tools, filesystem, sandboxes, and code execution; Summarization, memory, skills, and prompt caching; Todo lists and subagents for parallel, isolated work; Retries, fallbacks, and call limits; PII detection and content controls; Human-in-the-loop approval before high-impact actions",
+    "source": [
+      "04_agents.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 8
+  },
+  {
+    "question": "Models can be used in which two ways according to the document?",
+    "ground_truth": "Models can be used with agents (dynamically specified when creating an agent) or standalone (called directly for tasks like text generation, classification, or extraction).",
+    "answer_span": "Models can be utilized in two ways: 1. **With agents** - Models can be dynamically specified when creating an agent. 2. **Standalone** - Models can be called directly (outside of the agent loop) for tasks like text generation, classification, or extraction without the need for an agent framework.",
+    "source": [
+      "05_models.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 9
+  },
+  {
+    "question": "Prompt caching 通常在什么条件下才会被启用？",
+    "ground_truth": "Prompt caching 通常只有在输入 token 数量超过某个最低阈值时才会被启用。",
+    "answer_span": "Prompt caching is often only engaged above a minimum input token threshold.",
+    "source": [
+      "05_models.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 10
+  },
+  {
+    "question": "LangChain v1 中引入的 content blocks 与现有的 content 属性是什么关系？",
+    "ground_truth": "Content blocks 并不是用来替代 content 属性的，而是一个新属性，用于以标准化格式访问消息内容，同时保持与现有代码的向后兼容性。",
+    "answer_span": "Content blocks are not a replacement for the `content` property, but rather a new property that can be used to access the content of a message in a standardized format.",
+    "source": [
+      "06_messages.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 11
+  },
+  {
+    "question": "什么是 headless tools？它们是如何运行的？",
+    "ground_truth": "Headless tools 是包含名称、描述和参数模式的工具定义，注册在服务器上；其实现仅注册在客户端，并在短暂的 interrupt/resume 握手后执行。",
+    "answer_span": "**Headless tools** are tool definitions, which include the name, description, and argument schema, that you register on the **server** with your agent. The **implementation** is registered only on the **client** and executed after a short interrupt/resume handshake.",
+    "source": [
+      "07_tools.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 13
+  },
+  {
+    "question": "当模型在一次步骤中调用多个并行工具时，代理在什么条件下会路由到 END？",
+    "ground_truth": "只有当该批次中每个工具的 return_direct 都为 True 时，代理才会在所有这些工具执行完毕后路由到 END。",
+    "answer_span": "After all tools finish, the agent routes to `END` only if **every** tool in that batch has `return_direct=True`.",
+    "source": [
+      "07_tools.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 14
+  },
+  {
+    "question": "LangChain 的流式系统对应用的主要好处是什么？",
+    "ground_truth": "它能提升应用的响应性，通过逐步显示输出来显著改善用户体验，尤其是在应对 LLM 延迟时。",
+    "answer_span": "Streaming is crucial for enhancing the responsiveness of applications built on LLMs. By displaying output progressively, even before a complete response is ready, streaming significantly improves user experience (UX), particularly when dealing with the latency of LLMs.",
+    "source": [
+      "08_streaming.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 15
+  },
+  {
+    "question": "LangChain 推荐使用什么方式来实现实时流式更新？",
+    "ground_truth": "对于新应用，推荐使用事件流（event streaming），即 LangChain v1.3 中引入的类型化投影 API。它提供每个投影（消息、值、工具调用、子图）独立的迭代器，可以独立消费，无需在 stream_mode 块上分支。",
+    "answer_span": "For new applications, we recommend [event streaming](/oss/python/langchain/event-streaming)—the typed-projection API introduced in LangChain v1.3.",
+    "source": [
+      "08_streaming.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 16
+  },
+  {
+    "question": "结构化输出可以以哪些形式返回数据？",
+    "ground_truth": "JSON对象、Pydantic模型或dataclasses。",
+    "answer_span": "Instead of parsing natural language responses, you get structured data in the form of JSON objects, Pydantic models, or dataclasses that your application can use directly.",
+    "source": [
+      "09_structured-output.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 17
+  },
+  {
+    "question": "在使用agent时如何实现结构化输出？",
+    "ground_truth": "使用 `create_agent` 来实现结构化输出；如果不在agent环境中直接对模型使用结构化输出，则参考 Models 文档。",
+    "answer_span": "This page covers structured output with agents using `create_agent`. To use structured output directly on a model (outside of agents), see Models - Structured output.",
+    "source": [
+      "09_structured-output.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 18
+  },
+  {
+    "question": "如何为代理添加短期记忆（线程级持久化）？",
+    "ground_truth": "需要指定一个 checkpointer。",
+    "answer_span": "To add short-term memory (thread-level persistence) to an agent, you need to specify a `checkpointer` when creating an agent.",
+    "source": [
+      "10_short-term-memory.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 20
+  },
+  {
+    "question": "工具如何访问长期记忆存储？",
+    "ground_truth": "工具可以使用 `runtime.store` 参数从存储中读取和写入。",
+    "answer_span": "Tools can then read from and write to the store using the `runtime.store` parameter.",
+    "source": [
+      "11_long-term-memory.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 22
+  },
+  {
+    "question": "片段中提到的复杂应用示例是什么？",
+    "ground_truth": "检索器可以用于更复杂的应用，例如检索增强生成（RAG），它将问题与检索到的上下文结合在提示中提供给LLM。",
+    "answer_span": "You can use retrievers in more complex apps such as retrieval-augmented generation (RAG), which combine a question with retrieved context in a prompt for an LLM.",
+    "source": [
+      "12_knowledge-base.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 23
+  },
+  {
+    "question": "该教程涵盖哪些主要步骤？",
+    "ground_truth": "从PDF创建Document对象、生成嵌入、加载并拆分PDF、在向量存储中索引块并按相似性查询、将存储包装为检索器。",
+    "answer_span": "Create `Document` objects from a PDF. Generate embeddings. Load and split a PDF. Index chunks in a vector store and query by similarity. Wrap the store as a retriever.",
+    "source": [
+      "12_knowledge-base.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 24
+  },
+  {
+    "question": "如果代理生成的SQL命令有错误，会发生什么？",
+    "ground_truth": "错误信息会被返回给模型。模型会结合原始请求和新的错误信息，生成一个新的命令。这个过程会持续，直到LLM生成正确的命令。",
+    "answer_span": "If the command has an error, the error message is returned to the model. The model can then examine the original request and the new error message and generate a new command. This can continue until the LLM generates the co",
+    "source": [
+      "13_sql-agent.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 25
+  },
+  {
+    "question": "这种提供反馈的模式有什么作用？",
+    "ground_truth": "这种模式很强大，模型可以根据错误信息等反馈不断生成新命令，直到成功或达到结束次数。",
+    "answer_span": "This pattern of providing a model with feedback - error messages in this case - is very powerful.",
+    "source": [
+      "13_sql-agent.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 26
+  },
+  {
+    "question": "中间件可以用于哪些场景？",
+    "ground_truth": "中间件可用于追踪代理行为（日志、分析、调试）、转换提示词和输出格式，以及添加重试、回退和提前终止逻辑。",
+    "answer_span": "Tracking agent behavior with logging, analytics, and debugging. Transforming prompts, [tool selection](/oss/python/langchain/middleware/built-in#llm-tool-selector), and output formatting. Adding [retries](/oss/python/langchain/middleware/built-in#tool-retry), [fallbacks](/oss/python/langchain/middleware/built-in#model-fallback), and early termination logic.",
+    "source": [
+      "15_overview.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 29
+  },
+  {
+    "question": "在LangGraph工作流中使用中间件时，中间件是作为独立运行时运行的吗？",
+    "ground_truth": "不是。中间件不是在单独运行时中运行，其钩子在create_agent返回的编译后的LangGraph内部执行。可以将整个代理（包括中间件）作为节点或子图放入更大的StateGraph中，所有中间件钩子会继续运行。",
+    "answer_span": "Middleware is not a separate runtime: hooks run inside the compiled LangGraph that create_agent returns. You can drop the whole agent (middleware and all) into a larger StateGraph as a node or subgraph, and every middleware hook continues to run.",
+    "source": [
+      "15_overview.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 30
+  },
+  {
+    "question": "如何为摘要功能指定自定义提示模板？",
+    "ground_truth": "通过设置自定义模板，模板中需要包含 `{messages}` 占位符，用于插入对话历史。如果未指定，则使用内置模板。",
+    "answer_span": "Custom prompt template for summarization. Uses built-in template if not specified. The template should include `{messages}` placeholder where conversation history will be inserted.",
+    "source": [
+      "16_built-in.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 31
+  },
+  {
+    "question": "当非reducer状态字段发生冲突时，哪个中间件的值优先？",
+    "ground_truth": "最外层中间件的值优先。",
+    "answer_span": "The outermost middleware's value takes precedence on conflicting keys.",
+    "source": [
+      "17_custom.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 33
+  },
+  {
+    "question": "在 wrap_model_call 中如何注入状态更新？",
+    "ground_truth": "返回一个包含 Command 的 ExtendedModelResponse，以便从模型调用层注入状态更新。",
+    "answer_span": "Return a [`ExtendedModelResponse`](https://reference.langchain.com/python/langchain/agents/middleware/types/ExtendedModelResponse) with a [`Command`](https://reference.langchain.com/python/langgraph/types/Command) from `wrap_model_call` to inject state updates from the model call layer.",
+    "source": [
+      "18_context-engineering.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 35
+  },
+  {
+    "question": "在构建可靠的 agent 时，你需要控制什么？",
+    "ground_truth": "你需要控制 agent 循环中每一步发生的事情，以及步骤之间发生的事情。",
+    "answer_span": "To build reliable agents, you need to control what happens at each step of the agent loop, as well as what happens between steps.",
+    "source": [
+      "18_context-engineering.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 36
+  },
+  {
+    "question": "PII 防护栏中 `strategy` 参数的默认值是什么？",
+    "ground_truth": "`\"redact\"`",
+    "answer_span": "| `strategy` | How to handle detected PII (`\"block\"`, `\"redact\"`, `\"mask\"`, `\"hash\"`) | `\"redact\"` |",
+    "source": [
+      "19_guardrails.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 38
+  },
+  {
+    "question": "执行暂停时图状态是如何保存的？",
+    "ground_truth": "使用 LangGraph 的持久化层保存图状态，以便安全暂停并在之后恢复执行。",
+    "answer_span": "The graph state is saved using LangGraph's [persistence layer](/oss/python/langgraph/persistence), so execution can pause safely and resume later.",
+    "source": [
+      "20_human-in-the-loop.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 39
+  },
+  {
+    "question": "在什么情况下应使用 `respond` 工具？",
+    "ground_truth": "仅在人类充当工具时使用，例如回答 `ask_user` 提示。不要用它来拒绝有副作用的工具，因为其消息会被视为成功的工具结果。",
+    "answer_span": "Use `respond` only when the human is acting as the tool, such as answering an `ask_user` prompt. Do not use `respond` to deny side-effecting tools, because its message is treated as a successful tool result.",
+    "source": [
+      "20_human-in-the-loop.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 40
+  },
+  {
+    "question": "What is LangSmith Studio?",
+    "ground_truth": "LangSmith Studio is a free visual interface for developing and testing your LangChain agents from your local machine, which helps visualize what's happening inside your agent, interact with it in real-time, and debug issues as they occur.",
+    "answer_span": "**LangSmith Studio** is a free visual interface for developing and testing your LangChain agents from your local machine.",
+    "source": [
+      "22_studio.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 43
+  },
+  {
+    "question": "开发服务器的热重载功能是什么？",
+    "ground_truth": "开发服务器支持热重载——修改代码中的提示或工具签名，Studio会立即反映它们。",
+    "answer_span": "The development server supports hot-reloading—make changes to prompts or tool signatures in your code, and Studio reflects them immediately.",
+    "source": [
+      "22_studio.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 44
+  },
+  {
+    "question": "如何在不调用API的情况下测试agent逻辑？",
+    "ground_truth": "使用模拟聊天模型和内存持久化来测试agent逻辑，无需进行API调用。",
+    "answer_span": "Mock chat models and use in-memory persistence to test agent logic without API calls.",
+    "source": [
+      "23_test.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 45
+  },
+  {
+    "question": "为什么Agentic applications更倾向于集成？",
+    "ground_truth": "因为它们将多个组件链接在一起，并且必须处理由LLM的非确定性导致的不稳定性。",
+    "answer_span": "Agentic applications tend to lean more on integration because they chain multiple components together and must deal with flakiness due to the nondeterministic nature of LLMs.",
+    "source": [
+      "23_test.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 46
+  },
+  {
+    "question": "`strict` 和 `unordered` 模式在工具调用顺序上有何区别？",
+    "ground_truth": "在 `strict` 模式下，工具调用必须与参考消息按相同顺序精确匹配；而在 `unordered` 模式下，工具调用可以以任意顺序发生，但消息结构和工具调用集合需与参考一致。",
+    "answer_span": "Exact match of message structure and tool calls in the same order (message content can differ)；Same message structure and tool calls as reference, but tool calls can happen in any order",
+    "source": [
+      "24_evals.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 48
+  },
+  {
+    "question": "单元测试如何在不使用 API 调用的情况下测试 agent 逻辑？",
+    "ground_truth": "使用内存中的假聊天模型（fixture）替换真实 LLM，脚本化精确的响应（文本、工具调用和错误），从而实现快速、免费、可重复的测试，无需 API 密钥。",
+    "answer_span": "By replacing the real LLM with an in-memory fake (AKA fixture), you can script exact responses (text, tool calls, and errors) so tests are fast, free, and repeatable without API keys.",
+    "source": [
+      "25_unit-testing.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 49
+  },
+  {
+    "question": "stream.tool_calls 提供了哪些信息？",
+    "ground_truth": "工具执行生命周期、输入、输出增量、最终输出和错误。",
+    "answer_span": "`stream.tool_calls` | Tool execution lifecycle, inputs, output deltas, final output, and errors.",
+    "source": [
+      "27_event-streaming.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 52
+  },
+  {
+    "question": "根据文档片段，Related 部分提到了哪些主题？",
+    "ground_truth": "Related 部分提到了 Streaming（覆盖低层 Pregel 流模式）、Build your own projection（编写应用特定投影）以及 Frontend streaming patterns（基于流状态构建的 UI 用例）。",
+    "answer_span": "[Streaming](/oss/python/langchain/streaming) covers low-level Pregel stream modes. [Build your own projection](/oss/python/langgraph/event-streaming#build-your-own-projection) covers writing application-specific projections. [Frontend streaming patterns](/oss/python/langchain/frontend/overview) shows UI use cases built on streamed state.",
+    "source": [
+      "27_event-streaming.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 53
+  },
+  {
+    "question": "根据文档片段，Models 类别的主要用途是什么？",
+    "ground_truth": "AI reasoning and generation（AI 推理与生成）。",
+    "answer_span": "| **[Models](/oss/python/langchain/models)** | AI reasoning and generation | Chat models, LLMs, Embedding models | Text generation, reasoning, semantic understanding |",
+    "source": [
+      "28_component-architecture.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 54
+  },
+  {
+    "question": "根据表格，LangChain 的 Memory 组件的主要功能是什么？",
+    "ground_truth": "Context preservation（上下文保持）。",
+    "answer_span": "| **[Memory](/oss/python/langchain/short-term-memory)** | Context preservation | Message history, custom state | Conversations, stateful interactions |",
+    "source": [
+      "28_component-architecture.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 55
+  },
+  {
+    "question": "为什么需要上下文管理（Context management）模式？",
+    "ground_truth": "因为上下文窗口不是无限的、延迟也不是零，所以不能把所有知识都塞进单个提示中，需要有选择性地呈现相关信息的模式。",
+    "answer_span": "If context were infinite and latency zero, you could dump all knowledge into a single prompt—but since it's not, you need patterns to selectively surface relevant information.",
+    "source": [
+      "29_multi-agent.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 56
+  },
+  {
+    "question": "For built-in multi-agent support in LangChain, what is the recommended tool and what does it include?",
+    "ground_truth": "Use Deep Agents: a higher-level harness built on LangChain that ships with subagents, skills, planning, a virtual filesystem, and context management.",
+    "answer_span": "use [Deep Agents](/oss/python/deepagents/overview): a higher-level harness built on LangChain that ships with [subagents](/oss/python/deepagents/subagents), [skills](/oss/python/deepagents/skills), planning, a virtual filesystem, and context management.",
+    "source": [
+      "29_multi-agent.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 57
+  },
+  {
+    "question": "该文档片段的主要内容是什么？",
+    "ground_truth": "片段说明 langgraph-supervisor 包已不再积极维护，并指导用户如何从 create_supervisor 迁移到 subagents 模式，包括中断和恢复流程。",
+    "answer_span": "The langgraph-supervisor package is no longer actively maintained. Learn how to migrate from create\\_supervisor to the subagents pattern, including interrupt and resume flows with external API callbacks.",
+    "source": [
+      "30_subagents.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 58
+  },
+  {
+    "question": "Three-tool pattern 中启动后台任务后返回什么？",
+    "ground_truth": "返回一个 job ID。",
+    "answer_span": "**Start job**: Kicks off the background task, returns a job ID",
+    "source": [
+      "30_subagents.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 59
+  },
+  {
+    "question": "LangGraph 的灵感来源和构建者分别是什么？",
+    "ground_truth": "LangGraph 受 Pregel 和 Apache Beam 启发，公共接口受 NetworkX 启发；它由 LangChain Inc 构建，但可以不依赖 LangChain 使用。",
+    "answer_span": "LangGraph is inspired by Pregel and Apache Beam. The public interface draws inspiration from NetworkX. LangGraph is built by LangChain Inc, the creators of LangChain, but can be used without LangChain.",
+    "source": [
+      "31_overview.md"
+    ],
+    "type": "简单事实",
+    "origin": "auto",
+    "verified": true,
+    "id": 60
+  },
+  {
+    "question": "LangGraph 的 Graph API 和 Functional API 分别适合什么场景？",
+    "ground_truth": "Graph API 适合需要显式节点与边、带分支/循环/持久化的复杂编排；Functional API 适合用普通 Python 控制流（if/for）表达、不需要显式建图的场景。",
+    "source": [
+      "34_graph-api.md",
+      "36_functional-api.md",
+      "49_choosing-apis.md"
+    ],
+    "type": "综合",
+    "origin": "manual",
+    "notes": "需跨 2~3 篇文档对比",
+    "verified": true,
+    "id": 61
+  },
+  {
+    "question": "如何给 LangGraph 加上跨会话的长期记忆？",
+    "ground_truth": "通过 checkpointer 做线程内短期持久化，配合 Store（Long-term memory）跨线程保存与检索记忆；两者层次不同。",
+    "source": [
+      "38_persistence.md",
+      "39_checkpointers.md",
+      "40_add-memory.md",
+      "41_stores.md"
+    ],
+    "type": "综合",
+    "origin": "manual",
+    "notes": "跨 persistence/checkpointer/store 三块内容",
+    "verified": true,
+    "id": 62
+  },
+  {
+    "question": "子图（subgraph）如何与父图共享状态？",
+    "ground_truth": "子图作为节点嵌入父图，通过共享 state schema 中的 key 传递数据；若 key 不同需要在调用前后做转换。",
+    "source": [
+      "37_use-subgraphs.md"
+    ],
+    "type": "综合",
+    "origin": "manual",
+    "verified": true,
+    "id": 63
+  },
+  {
+    "question": "create_agent 的 middleware 有哪些典型用法？",
+    "ground_truth": "典型用法包括：模型调用前的日志/审计、失败重试、动态切换模型、上下文裁剪（summarization）、人工审批（human-in-the-loop）等，分 before_model / wrap_model_call / wrap_tool_call 等钩子。",
+    "source": [
+      "16_built-in.md",
+      "17_custom.md",
+      "15_overview.md"
+    ],
+    "type": "综合",
+    "origin": "manual",
+    "notes": "需跨 built-in 与 custom 两篇",
+    "verified": true,
+    "id": 64
+  },
+  {
+    "question": "流式输出在 LangGraph 里有哪几种粒度？",
+    "ground_truth": "至少包括 updates（节点级增量）、messages（token 级）、custom（自定义事件）以及 debug 模式等多种 stream_mode。",
+    "source": [
+      "26_streaming.md",
+      "42_streaming.md",
+      "43_event-streaming.md"
+    ],
+    "type": "综合",
+    "origin": "manual",
+    "verified": true,
+    "id": 65
+  },
+  {
+    "question": "LangGraph 里如何做人工介入（human-in-the-loop）？",
+    "ground_truth": "用 interrupt() 在节点中暂停执行，等待外部输入后通过 Command(resume=...) 恢复；配合 checkpointer 保存暂停时的状态。",
+    "source": [
+      "44_interrupts.md",
+      "46_use-time-travel.md"
+    ],
+    "type": "综合",
+    "origin": "manual",
+    "verified": true,
+    "id": 66
+  },
+  {
+    "question": "持久化（persistence）和容错（fault tolerance）在 LangGraph 中是如何配合的？",
+    "ground_truth": "checkpointer 在每个节点（super-step）后保存状态，节点失败后可从最近检查点恢复重放，实现容错与可回溯。",
+    "source": [
+      "38_persistence.md",
+      "51_fault-tolerance.md",
+      "39_checkpointers.md"
+    ],
+    "type": "综合",
+    "origin": "manual",
+    "verified": true,
+    "id": 67
+  },
+  {
+    "question": "Agentic RAG 与朴素 RAG 的流程差别是什么？",
+    "ground_truth": "Agentic RAG 把检索作为工具交给 agent 自主决定何时检索、检索几次、是否换查询，是循环/分支结构；朴素 RAG 是固定的检索一次再生成。",
+    "source": [
+      "47_agentic-rag.md",
+      "31_overview.md"
+    ],
+    "type": "综合",
+    "origin": "manual",
+    "verified": true,
+    "id": 68
+  },
+  {
+    "question": "DeepSeek 模型的训练数据规模是多少？",
+    "ground_truth": "__REFUSAL__",
+    "source": [],
+    "type": "越界",
+    "origin": "manual",
+    "notes": "语料只讲如何通过 API 接入模型，不涉及训练数据",
+    "verified": true,
+    "id": 69
+  },
+  {
+    "question": "如何用 LangGraph 做红烧肉的菜谱推荐？",
+    "ground_truth": "__REFUSAL__",
+    "source": [],
+    "type": "越界",
+    "origin": "manual",
+    "verified": true,
+    "id": 70
+  },
+  {
+    "question": "LangChain 2028 年的发布路线图是什么？",
+    "ground_truth": "__REFUSAL__",
+    "source": [],
+    "type": "越界",
+    "origin": "manual",
+    "verified": true,
+    "id": 71
+  },
+  {
+    "question": "这份语料里有没有讲 Kubernetes 集群运维？",
+    "ground_truth": "__REFUSAL__",
+    "source": [],
+    "type": "越界",
+    "origin": "manual",
+    "verified": true,
+    "id": 72
+  },
+  {
+    "question": "BAAI/bge-small-zh-v1.5 模型的参数量是多少？",
+    "ground_truth": "__REFUSAL__",
+    "source": [],
+    "type": "越界",
+    "origin": "manual",
+    "notes": "语料未涉及该 embedding 模型",
+    "verified": true,
+    "id": 73
+  },
+  {
+    "question": "公司内部的报销流程怎么走？",
+    "ground_truth": "__REFUSAL__",
+    "source": [],
+    "type": "越界",
+    "origin": "manual",
+    "verified": true,
+    "id": 74
+  },
+  {
+    "question": "LangGraph 支持哪些编程语言的官方 SDK（除 Python/JS 外）？",
+    "ground_truth": "__REFUSAL__",
+    "source": [],
+    "type": "越界",
+    "origin": "manual",
+    "notes": "语料未给出该信息，期望拒答",
+    "verified": true,
+    "id": 75
+  },
+  {
+    "question": "2026 年 LangChain 的融资额是多少？",
+    "ground_truth": "__REFUSAL__",
+    "source": [],
+    "type": "越界",
+    "origin": "manual",
+    "verified": true,
+    "id": 76
+  }
+]

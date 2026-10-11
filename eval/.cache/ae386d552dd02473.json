@@ -1,0 +1,11 @@
+{
+  "question": "stream.tool_calls 提供了哪些信息？",
+  "ground_truth": "工具执行生命周期、输入、输出增量、最终输出和错误。",
+  "answer_span": "`stream.tool_calls` | Tool execution lifecycle, inputs, output deltas, final output, and errors.",
+  "source": [
+    "27_event-streaming.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

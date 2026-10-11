@@ -1,0 +1,59 @@
+# 全局配置：所有可调参数集中在此，代码禁止硬编码
+# 读取方式：from src.config import load_config; cfg = load_config()
+
+# --- 语料与路径 ---
+paths:
+  raw_dir: data/raw            # 原始 markdown 语料目录
+  chroma_dir: data/chroma      # Chroma 持久化目录
+  reports_dir: eval/reports    # 评估报告输出目录
+  cache_dir: eval/.cache       # LLM 调用结果缓存目录
+
+# --- 切分参数（Day 2）---
+ingest:
+  chunk_size: 500              # 目标 chunk 字符数
+  chunk_overlap: 80            # 相邻 chunk 重叠字符数（约 chunk_size 的 16%）
+  # 中文友好的分隔符顺序：先段落，再句子，最后才退化到字符级硬切
+  separators:
+    - "\n\n"
+    - "\n"
+    - "。"
+    - "！"
+    - "？"
+    - "；"
+    - "，"
+    - ""
+  min_chunk_chars: 20          # 低于此长度的碎片 chunk 直接丢弃
+
+# --- Embedding 模型（Day 2）---
+embedding:
+  model_name: models/bge-small-zh-v1.5   # 本地模型目录，缺失时回退 HF 仓库名
+  hf_model_name: BAAI/bge-small-zh-v1.5  # 本地目录不存在时使用的 HF 模型名
+  normalize: true
+
+# --- 向量库（Day 2）---
+chroma:
+  collection_name: langchain_docs
+  batch_size: 64               # 每批入库条数
+
+# --- RAG 生成参数（Day 3）---
+rag:
+  top_k: 5                     # 检索返回条数
+  score_threshold: 0.0         # 相似度下限（0 表示不过滤）
+  max_context_chars: 4000      # 拼接后的 context 字符上限
+  temperature: 0.1
+  prompt_version: v1
+
+# --- Agent / CRAG（Day 4）---
+agent:
+  max_retry: 1                 # 查询重写最多循环次数（硬性上限）
+  router_temperature: 0.0      # 路由/打分/重写一律 temperature=0
+  llm_model: deepseek-v4-flash # 从 .env 覆盖（DEEPSEEK_MODEL）
+  llm_base_url: null           # 默认读 .env 的 DEEPSEEK_BASE_URL
+
+# --- 评估（Day 5/6）---
+eval:
+  max_cost_samples: 50         # 单次评估样本上限，超出需 --force
+  concurrency: 3               # 并发上限（防限流）
+  ragas_batch_size: 10         # Ragas 每批样本数
+  top_k_eval: 8                # 评估时检索条数（比线上 top_k 更宽，便于算 MRR）
+  hit_k: 5                     # Hit@k 的 k

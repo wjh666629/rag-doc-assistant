@@ -1,0 +1,11 @@
+{
+  "question": "使用 LangSmith 进行可观测性追踪前需要准备什么？",
+  "ground_truth": "需要一个 LangSmith 账户（可在 smith.langchain.com 免费注册或登录），以及一个 LangSmith API 密钥（按照创建 API 密钥指南操作）。",
+  "answer_span": "A LangSmith account: Sign up (for free) or log in at smith.langchain.com... A LangSmith API key: Follow the Create an API key guide.",
+  "source": [
+    "21_observability.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

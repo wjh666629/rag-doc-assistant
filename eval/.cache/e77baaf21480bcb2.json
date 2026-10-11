@@ -1,0 +1,11 @@
+{
+  "question": "中间件可以用于哪些场景？",
+  "ground_truth": "中间件可用于追踪代理行为（日志、分析、调试）、转换提示词和输出格式，以及添加重试、回退和提前终止逻辑。",
+  "answer_span": "Tracking agent behavior with logging, analytics, and debugging. Transforming prompts, [tool selection](/oss/python/langchain/middleware/built-in#llm-tool-selector), and output formatting. Adding [retries](/oss/python/langchain/middleware/built-in#tool-retry), [fallbacks](/oss/python/langchain/middleware/built-in#model-fallback), and early termination logic.",
+  "source": [
+    "15_overview.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

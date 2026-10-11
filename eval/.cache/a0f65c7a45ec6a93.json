@@ -1,0 +1,11 @@
+{
+  "question": "开发服务器的热重载功能是什么？",
+  "ground_truth": "开发服务器支持热重载——修改代码中的提示或工具签名，Studio会立即反映它们。",
+  "answer_span": "The development server supports hot-reloading—make changes to prompts or tool signatures in your code, and Studio reflects them immediately.",
+  "source": [
+    "22_studio.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

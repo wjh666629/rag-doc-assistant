@@ -1,0 +1,11 @@
+{
+  "question": "如何为摘要功能指定自定义提示模板？",
+  "ground_truth": "通过设置自定义模板，模板中需要包含 `{messages}` 占位符，用于插入对话历史。如果未指定，则使用内置模板。",
+  "answer_span": "Custom prompt template for summarization. Uses built-in template if not specified. The template should include `{messages}` placeholder where conversation history will be inserted.",
+  "source": [
+    "16_built-in.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

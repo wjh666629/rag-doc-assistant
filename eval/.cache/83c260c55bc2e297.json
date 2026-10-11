@@ -1,0 +1,11 @@
+{
+  "question": "Long-term memory 与 short-term memory 的主要区别是什么？",
+  "ground_truth": "Long-term memory 跨线程持久化，并且可以随时被回忆；而 short-term memory 局限于单个线程。",
+  "answer_span": "Unlike short-term memory, which is scoped to a single thread, long-term memory persists across threads and can be recalled at any time.",
+  "source": [
+    "11_long-term-memory.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

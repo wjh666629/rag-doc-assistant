@@ -1,0 +1,11 @@
+{
+  "question": "`strict` 和 `unordered` 模式在工具调用顺序上有何区别？",
+  "ground_truth": "在 `strict` 模式下，工具调用必须与参考消息按相同顺序精确匹配；而在 `unordered` 模式下，工具调用可以以任意顺序发生，但消息结构和工具调用集合需与参考一致。",
+  "answer_span": "Exact match of message structure and tool calls in the same order (message content can differ)；Same message structure and tool calls as reference, but tool calls can happen in any order",
+  "source": [
+    "24_evals.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

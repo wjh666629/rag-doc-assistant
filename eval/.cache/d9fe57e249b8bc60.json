@@ -1,0 +1,11 @@
+{
+  "question": "在快速入门中，第一步需要做什么？",
+  "ground_truth": "第一步是阅读指南，检测项目使用 Python 还是 TypeScript/JavaScript，然后获取并遵循匹配的页面，并将其视为包名、模型字符串和代码的准确来源。",
+  "answer_span": "Detect whether this project uses Python or TypeScript/JavaScript. Fetch and follow the matching page; treat it as the source of truth for package names, model strings, and code:",
+  "source": [
+    "01_quickstart.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

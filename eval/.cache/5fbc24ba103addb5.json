@@ -1,0 +1,11 @@
+{
+  "question": "LangGraph 的灵感来源和构建者分别是什么？",
+  "ground_truth": "LangGraph 受 Pregel 和 Apache Beam 启发，公共接口受 NetworkX 启发；它由 LangChain Inc 构建，但可以不依赖 LangChain 使用。",
+  "answer_span": "LangGraph is inspired by Pregel and Apache Beam. The public interface draws inspiration from NetworkX. LangGraph is built by LangChain Inc, the creators of LangChain, but can be used without LangChain.",
+  "source": [
+    "31_overview.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

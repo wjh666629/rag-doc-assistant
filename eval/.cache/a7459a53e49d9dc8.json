@@ -1,0 +1,11 @@
+{
+  "question": "为什么需要上下文管理（Context management）模式？",
+  "ground_truth": "因为上下文窗口不是无限的、延迟也不是零，所以不能把所有知识都塞进单个提示中，需要有选择性地呈现相关信息的模式。",
+  "answer_span": "If context were infinite and latency zero, you could dump all knowledge into a single prompt—but since it's not, you need patterns to selectively surface relevant information.",
+  "source": [
+    "29_multi-agent.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

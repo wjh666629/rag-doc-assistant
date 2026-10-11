@@ -1,0 +1,11 @@
+{
+  "question": "这种提供反馈的模式有什么作用？",
+  "ground_truth": "这种模式很强大，模型可以根据错误信息等反馈不断生成新命令，直到成功或达到结束次数。",
+  "answer_span": "This pattern of providing a model with feedback - error messages in this case - is very powerful.",
+  "source": [
+    "13_sql-agent.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

@@ -1,0 +1,11 @@
+{
+  "question": "For built-in multi-agent support in LangChain, what is the recommended tool and what does it include?",
+  "ground_truth": "Use Deep Agents: a higher-level harness built on LangChain that ships with subagents, skills, planning, a virtual filesystem, and context management.",
+  "answer_span": "use [Deep Agents](/oss/python/deepagents/overview): a higher-level harness built on LangChain that ships with [subagents](/oss/python/deepagents/subagents), [skills](/oss/python/deepagents/skills), planning, a virtual filesystem, and context management.",
+  "source": [
+    "29_multi-agent.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

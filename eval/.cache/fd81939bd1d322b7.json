@@ -1,0 +1,11 @@
+{
+  "question": "@wrap_model_call 和 @wrap_tool_call 装饰器分别有什么作用？",
+  "ground_truth": "@wrap_model_call 用自定义逻辑包装每次模型调用；@wrap_tool_call 用自定义逻辑包装每次工具调用。",
+  "answer_span": "@wrap_model_call - Wraps each model call with custom logic; @wrap_tool_call - Wraps each tool call with custom logic",
+  "source": [
+    "17_custom.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

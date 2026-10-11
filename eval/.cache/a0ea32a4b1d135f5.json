@@ -1,0 +1,11 @@
+{
+  "question": "Traces 在 LangChain agents 中记录什么数据？",
+  "ground_truth": "Traces 记录 agent 执行的每一步，从初始用户输入到最终响应，包括所有工具调用、模型交互和决策点。",
+  "answer_span": "Traces record every step of your agent's execution, from the initial user input to the final response, including all tool calls, model interactions, and decision points.",
+  "source": [
+    "21_observability.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

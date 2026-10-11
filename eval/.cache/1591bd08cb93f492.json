@@ -1,0 +1,11 @@
+{
+  "question": "在构建可靠的 agent 时，你需要控制什么？",
+  "ground_truth": "你需要控制 agent 循环中每一步发生的事情，以及步骤之间发生的事情。",
+  "answer_span": "To build reliable agents, you need to control what happens at each step of the agent loop, as well as what happens between steps.",
+  "source": [
+    "18_context-engineering.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

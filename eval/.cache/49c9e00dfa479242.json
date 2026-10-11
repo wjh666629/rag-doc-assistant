@@ -1,0 +1,11 @@
+{
+  "question": "该教程涵盖哪些主要步骤？",
+  "ground_truth": "从PDF创建Document对象、生成嵌入、加载并拆分PDF、在向量存储中索引块并按相似性查询、将存储包装为检索器。",
+  "answer_span": "Create `Document` objects from a PDF. Generate embeddings. Load and split a PDF. Index chunks in a vector store and query by similarity. Wrap the store as a retriever.",
+  "source": [
+    "12_knowledge-base.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

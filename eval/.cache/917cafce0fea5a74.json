@@ -1,0 +1,11 @@
+{
+  "question": "在 wrap_model_call 中如何注入状态更新？",
+  "ground_truth": "返回一个包含 Command 的 ExtendedModelResponse，以便从模型调用层注入状态更新。",
+  "answer_span": "Return a [`ExtendedModelResponse`](https://reference.langchain.com/python/langchain/agents/middleware/types/ExtendedModelResponse) with a [`Command`](https://reference.langchain.com/python/langgraph/types/Command) from `wrap_model_call` to inject state updates from the model call layer.",
+  "source": [
+    "18_context-engineering.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

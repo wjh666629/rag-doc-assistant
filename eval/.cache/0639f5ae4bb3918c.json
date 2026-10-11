@@ -1,0 +1,11 @@
+{
+  "question": "PII 防护栏中 `strategy` 参数的默认值是什么？",
+  "ground_truth": "`\"redact\"`",
+  "answer_span": "| `strategy` | How to handle detected PII (`\"block\"`, `\"redact\"`, `\"mask\"`, `\"hash\"`) | `\"redact\"` |",
+  "source": [
+    "19_guardrails.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

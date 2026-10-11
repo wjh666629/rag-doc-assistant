@@ -1,0 +1,11 @@
+{
+  "question": "片段中提到的复杂应用示例是什么？",
+  "ground_truth": "检索器可以用于更复杂的应用，例如检索增强生成（RAG），它将问题与检索到的上下文结合在提示中提供给LLM。",
+  "answer_span": "You can use retrievers in more complex apps such as retrieval-augmented generation (RAG), which combine a question with retrieved context in a prompt for an LLM.",
+  "source": [
+    "12_knowledge-base.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

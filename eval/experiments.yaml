@@ -1,0 +1,18 @@
+# Day 7 对比实验定义（一次只改一个变量）
+experiments:
+  - name: "E1_chunk300"
+    note: "chunk_size 500→300, overlap 45（假设：简单事实类 Hit@5 上升，综合类下降）"
+    config_override:
+      ingest:
+        chunk_size: 300
+        chunk_overlap: 45
+    rebuild_index: true
+    collection_suffix: "_c300"
+
+  - name: "E3_prompt_v2"
+    note: "RAG prompt v1→v2（强化拒答约束措辞；假设：拒答正确率上升，faithfulness 上升）"
+    config_override:
+      rag:
+        prompt_version: v2
+    rebuild_index: false
+    collection_suffix: ""

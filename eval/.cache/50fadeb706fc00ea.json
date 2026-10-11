@@ -1,0 +1,11 @@
+{
+  "question": "LangChain 的流式系统对应用的主要好处是什么？",
+  "ground_truth": "它能提升应用的响应性，通过逐步显示输出来显著改善用户体验，尤其是在应对 LLM 延迟时。",
+  "answer_span": "Streaming is crucial for enhancing the responsiveness of applications built on LLMs. By displaying output progressively, even before a complete response is ready, streaming significantly improves user experience (UX), particularly when dealing with the latency of LLMs.",
+  "source": [
+    "08_streaming.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

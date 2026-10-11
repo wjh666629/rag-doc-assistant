@@ -1,0 +1,11 @@
+{
+  "question": "工具如何访问长期记忆存储？",
+  "ground_truth": "工具可以使用 `runtime.store` 参数从存储中读取和写入。",
+  "answer_span": "Tools can then read from and write to the store using the `runtime.store` parameter.",
+  "source": [
+    "11_long-term-memory.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

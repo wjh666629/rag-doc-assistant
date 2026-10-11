@@ -1,0 +1,11 @@
+{
+  "question": "根据表格，LangChain 的 Memory 组件的主要功能是什么？",
+  "ground_truth": "Context preservation（上下文保持）。",
+  "answer_span": "| **[Memory](/oss/python/langchain/short-term-memory)** | Context preservation | Message history, custom state | Conversations, stateful interactions |",
+  "source": [
+    "28_component-architecture.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

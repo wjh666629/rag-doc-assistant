@@ -1,0 +1,11 @@
+{
+  "question": "结构化输出可以以哪些形式返回数据？",
+  "ground_truth": "JSON对象、Pydantic模型或dataclasses。",
+  "answer_span": "Instead of parsing natural language responses, you get structured data in the form of JSON objects, Pydantic models, or dataclasses that your application can use directly.",
+  "source": [
+    "09_structured-output.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

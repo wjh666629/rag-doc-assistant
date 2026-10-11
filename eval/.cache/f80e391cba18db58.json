@@ -1,0 +1,11 @@
+{
+  "question": "TriggerClause 中的多个阈值是如何共同起作用的？",
+  "ground_truth": "TriggerClause 字典中可以包含一个或多个阈值，例如 {\"tokens\": 4000, \"messages\": 10}，字典中的所有阈值都必须被满足（AND 关系），即所有条件同时达到才触发。",
+  "answer_span": "TriggerClause dict can include one or more thresholds, e.g. {\"tokens\": 4000, \"messages\": 10}, and all thresholds in the dict must be met (AND).",
+  "source": [
+    "16_built-in.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

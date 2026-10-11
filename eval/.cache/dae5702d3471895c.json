@@ -1,0 +1,11 @@
+{
+  "question": "Three-tool pattern 中启动后台任务后返回什么？",
+  "ground_truth": "返回一个 job ID。",
+  "answer_span": "**Start job**: Kicks off the background task, returns a job ID",
+  "source": [
+    "30_subagents.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

@@ -1,0 +1,11 @@
+{
+  "question": "如何为代理添加短期记忆（线程级持久化）？",
+  "ground_truth": "需要指定一个 checkpointer。",
+  "answer_span": "To add short-term memory (thread-level persistence) to an agent, you need to specify a `checkpointer` when creating an agent.",
+  "source": [
+    "10_short-term-memory.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

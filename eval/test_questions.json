@@ -1,0 +1,12 @@
+[
+  {"id": 1, "question": "LangGraph 中如何定义 state？", "type": "简单事实", "expected_source": "use-graph-api / graph-api", "notes": "语料 LangGraph 文档；中文提问"},
+  {"id": 2, "question": "What is a checkpointer used for in LangGraph?", "type": "简单事实", "expected_source": "checkpointers / persistence", "notes": "英文提问，测试同语言检索"},
+  {"id": 3, "question": "如何中断一个 LangGraph 的执行并等待人工输入？", "type": "简单事实", "expected_source": "interrupts / human-in-the-loop", "notes": "中文提问"},
+  {"id": 4, "question": "How to stream token-by-token output from a LangGraph agent?", "type": "简单事实", "expected_source": "streaming", "notes": "英文提问"},
+  {"id": 5, "question": "create_agent 的 middleware 有哪些典型用法？", "type": "综合", "expected_source": "middleware/built-in / custom", "notes": "跨多个 chunk"},
+  {"id": 6, "question": "LangGraph 的 Graph API 和 Functional API 分别适合什么场景？", "type": "综合", "expected_source": "choosing-apis / functional-api / graph-api", "notes": "跨文档对比"},
+  {"id": 7, "question": "子图（subgraph）如何与父图共享状态？", "type": "综合", "expected_source": "use-subgraphs", "notes": "跨段落"},
+  {"id": 8, "question": "DeepSeek 模型的训练数据规模是多少？", "type": "越界", "expected_source": "", "notes": "语料明确没有，期望拒答"},
+  {"id": 9, "question": "如何用 LangGraph 做红烧肉的菜谱推荐？", "type": "越界", "expected_source": "", "notes": "语料明确没有，期望拒答"},
+  {"id": 10, "question": "LangChain 2028 年的发布路线图是什么？", "type": "越界", "expected_source": "", "notes": "未发布信息，期望拒答"}
+]

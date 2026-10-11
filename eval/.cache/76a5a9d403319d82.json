@@ -1,0 +1,11 @@
+{
+  "question": "guardrails 常见的使用场景有哪些？",
+  "ground_truth": "防止 PII 泄露、检测并阻止提示注入攻击、阻止不当或有害内容、强制执行业务规则和合规要求、验证输出质量和准确性。",
+  "answer_span": "Preventing PII leakage; Detecting and blocking prompt injection attacks; Blocking inappropriate or harmful content; Enforcing business rules and compliance requirements; Validating output quality and accuracy",
+  "source": [
+    "19_guardrails.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

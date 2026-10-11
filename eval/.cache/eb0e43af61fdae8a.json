@@ -1,0 +1,11 @@
+{
+  "question": "执行暂停时图状态是如何保存的？",
+  "ground_truth": "使用 LangGraph 的持久化层保存图状态，以便安全暂停并在之后恢复执行。",
+  "answer_span": "The graph state is saved using LangGraph's [persistence layer](/oss/python/langgraph/persistence), so execution can pause safely and resume later.",
+  "source": [
+    "20_human-in-the-loop.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

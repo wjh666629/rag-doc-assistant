@@ -1,0 +1,11 @@
+{
+  "question": "该文档片段的主要内容是什么？",
+  "ground_truth": "片段说明 langgraph-supervisor 包已不再积极维护，并指导用户如何从 create_supervisor 迁移到 subagents 模式，包括中断和恢复流程。",
+  "answer_span": "The langgraph-supervisor package is no longer actively maintained. Learn how to migrate from create\\_supervisor to the subagents pattern, including interrupt and resume flows with external API callbacks.",
+  "source": [
+    "30_subagents.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

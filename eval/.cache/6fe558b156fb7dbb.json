@@ -1,0 +1,11 @@
+{
+  "question": "如何将这些文档连接到我的代理？",
+  "ground_truth": "通过MCP（模型上下文协议）将这些文档连接到您选择的代理，以获得实时答案。",
+  "answer_span": "Connect these docs to your agent of choice via MCP for real-time answers.",
+  "source": [
+    "26_integration-testing.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

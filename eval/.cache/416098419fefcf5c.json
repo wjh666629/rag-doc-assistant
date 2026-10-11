@@ -1,0 +1,11 @@
+{
+  "question": "如果代理生成的SQL命令有错误，会发生什么？",
+  "ground_truth": "错误信息会被返回给模型。模型会结合原始请求和新的错误信息，生成一个新的命令。这个过程会持续，直到LLM生成正确的命令。",
+  "answer_span": "If the command has an error, the error message is returned to the model. The model can then examine the original request and the new error message and generate a new command. This can continue until the LLM generates the co",
+  "source": [
+    "13_sql-agent.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

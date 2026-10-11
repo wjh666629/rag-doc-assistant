@@ -1,0 +1,11 @@
+{
+  "question": "在什么情况下应该使用 LangGraph？",
+  "ground_truth": "当需要结合确定性和智能体工作流的先进需求时，应使用 LangGraph。",
+  "answer_span": "Use LangGraph, our low-level orchestration framework, for advanced needs combining deterministic and agentic workflows.",
+  "source": [
+    "02_overview.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

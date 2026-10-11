@@ -1,0 +1,11 @@
+{
+  "question": "该文档片段提到可以在一个地方检查哪些内容？",
+  "ground_truth": "可以在一个地方检查追踪（traces）、工具调用（tool calls）、状态转换（state transitions）和延迟（latency）。",
+  "answer_span": "Inspect traces, tool calls, state transitions, and latency in one place.",
+  "source": [
+    "02_overview.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

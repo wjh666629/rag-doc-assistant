@@ -1,0 +1,11 @@
+{
+  "question": "根据文档片段，Related 部分提到了哪些主题？",
+  "ground_truth": "Related 部分提到了 Streaming（覆盖低层 Pregel 流模式）、Build your own projection（编写应用特定投影）以及 Frontend streaming patterns（基于流状态构建的 UI 用例）。",
+  "answer_span": "[Streaming](/oss/python/langchain/streaming) covers low-level Pregel stream modes. [Build your own projection](/oss/python/langgraph/event-streaming#build-your-own-projection) covers writing application-specific projections. [Frontend streaming patterns](/oss/python/langchain/frontend/overview) shows UI use cases built on streamed state.",
+  "source": [
+    "27_event-streaming.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

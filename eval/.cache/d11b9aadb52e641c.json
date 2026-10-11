@@ -1,0 +1,11 @@
+{
+  "question": "LangChain 的 create_agent 在什么运行时上运行？",
+  "ground_truth": "LangGraph 的运行时",
+  "answer_span": "LangChain's create_agent runs on LangGraph's runtime under the hood.",
+  "source": [
+    "14_runtime.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

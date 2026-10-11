@@ -1,0 +1,11 @@
+{
+  "question": "Prompt caching 通常在什么条件下才会被启用？",
+  "ground_truth": "Prompt caching 通常只有在输入 token 数量超过某个最低阈值时才会被启用。",
+  "answer_span": "Prompt caching is often only engaged above a minimum input token threshold.",
+  "source": [
+    "05_models.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

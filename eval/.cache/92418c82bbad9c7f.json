@@ -1,0 +1,11 @@
+{
+  "question": "什么是 headless tools？它们是如何运行的？",
+  "ground_truth": "Headless tools 是包含名称、描述和参数模式的工具定义，注册在服务器上；其实现仅注册在客户端，并在短暂的 interrupt/resume 握手后执行。",
+  "answer_span": "**Headless tools** are tool definitions, which include the name, description, and argument schema, that you register on the **server** with your agent. The **implementation** is registered only on the **client** and executed after a short interrupt/resume handshake.",
+  "source": [
+    "07_tools.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

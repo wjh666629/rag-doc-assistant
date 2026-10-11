@@ -1,0 +1,11 @@
+{
+  "question": "What is LangSmith Studio?",
+  "ground_truth": "LangSmith Studio is a free visual interface for developing and testing your LangChain agents from your local machine, which helps visualize what's happening inside your agent, interact with it in real-time, and debug issues as they occur.",
+  "answer_span": "**LangSmith Studio** is a free visual interface for developing and testing your LangChain agents from your local machine.",
+  "source": [
+    "22_studio.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

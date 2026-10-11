@@ -1,0 +1,11 @@
+{
+  "question": "如何在不调用API的情况下测试agent逻辑？",
+  "ground_truth": "使用模拟聊天模型和内存持久化来测试agent逻辑，无需进行API调用。",
+  "answer_span": "Mock chat models and use in-memory persistence to test agent logic without API calls.",
+  "source": [
+    "23_test.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

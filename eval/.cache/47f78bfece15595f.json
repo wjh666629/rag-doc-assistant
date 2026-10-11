@@ -1,0 +1,11 @@
+{
+  "question": "LangChain v1 中引入的 content blocks 与现有的 content 属性是什么关系？",
+  "ground_truth": "Content blocks 并不是用来替代 content 属性的，而是一个新属性，用于以标准化格式访问消息内容，同时保持与现有代码的向后兼容性。",
+  "answer_span": "Content blocks are not a replacement for the `content` property, but rather a new property that can be used to access the content of a message in a standardized format.",
+  "source": [
+    "06_messages.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

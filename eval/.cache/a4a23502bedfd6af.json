@@ -1,0 +1,11 @@
+{
+  "question": "当模型在一次步骤中调用多个并行工具时，代理在什么条件下会路由到 END？",
+  "ground_truth": "只有当该批次中每个工具的 return_direct 都为 True 时，代理才会在所有这些工具执行完毕后路由到 END。",
+  "answer_span": "After all tools finish, the agent routes to `END` only if **every** tool in that batch has `return_direct=True`.",
+  "source": [
+    "07_tools.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}

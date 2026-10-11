@@ -1,0 +1,11 @@
+{
+  "question": "Models can be used in which two ways according to the document?",
+  "ground_truth": "Models can be used with agents (dynamically specified when creating an agent) or standalone (called directly for tasks like text generation, classification, or extraction).",
+  "answer_span": "Models can be utilized in two ways: 1. **With agents** - Models can be dynamically specified when creating an agent. 2. **Standalone** - Models can be called directly (outside of the agent loop) for tasks like text generation, classification, or extraction without the need for an agent framework.",
+  "source": [
+    "05_models.md"
+  ],
+  "type": "简单事实",
+  "origin": "auto",
+  "verified": false
+}
