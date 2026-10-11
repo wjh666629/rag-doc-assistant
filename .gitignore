@@ -17,3 +17,6 @@ models/
 
 # Streamlit 本地配置/缓存
 .streamlit/
+
+# 评估 LLM 响应缓存（可再生成）
+eval/.cache/

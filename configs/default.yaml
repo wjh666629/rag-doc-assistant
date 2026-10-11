@@ -47,8 +47,8 @@ rag:
 agent:
   max_retry: 1                 # 查询重写最多循环次数（硬性上限）
   router_temperature: 0.0      # 路由/打分/重写一律 temperature=0
-  llm_model: deepseek-v4-flash # 从 .env 覆盖（DEEPSEEK_MODEL）
-  llm_base_url: null           # 默认读 .env 的 DEEPSEEK_BASE_URL
+  llm_model: null            # null 时读 .env 的 DEEPSEEK_MODEL（默认 deepseek-chat）
+  llm_base_url: null         # null 时读 .env 的 DEEPSEEK_BASE_URL
 
 # --- 评估（Day 5/6）---
 eval:

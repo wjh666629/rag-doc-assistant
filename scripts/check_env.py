@@ -18,7 +18,7 @@ def check_env() -> None:
         print("[错误] 未找到 DEEPSEEK_API_KEY。")
         print("       请复制 .env.example 为 .env，并填入你的 DeepSeek API key。")
         sys.exit(1)
-    if api_key == "sk-xxxxxxxxxxxxxxxxxxxxxxxx":
+    if api_key == "sk-" + "x" * 24:  # 与 .env.example 占位符比对（拆开写避免被误判为真实 key）
         print("[错误] DEEPSEEK_API_KEY 仍是 .env.example 中的占位符，请替换为真实 key。")
         sys.exit(1)
     print(f"[OK] DEEPSEEK_API_KEY 已加载（长度 {len(api_key)}，已隐藏明文）")

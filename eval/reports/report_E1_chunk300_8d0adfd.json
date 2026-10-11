@@ -1,0 +1,903 @@
+{
+  "commit": "8d0adfd",
+  "timestamp": "2026-10-11T23:11:57.062295",
+  "note": "chunk_size 500→300, overlap 45（假设：简单事实类 Hit@5 上升，综合类下降）",
+  "metrics": {
+    "hit@5": 0.5577,
+    "mrr": 0.3781,
+    "faithfulness": 0.697,
+    "answer_relevancy": 0.5583,
+    "context_recall": 0.4271,
+    "refusal_rate": 0.375,
+    "avg_latency": 15.78,
+    "p95_latency": 33.89,
+    "n": 30,
+    "n_retrieval": 52,
+    "ragas_failure_rate": 0.0
+  },
+  "by_type": {
+    "简单事实": {
+      "hit@k": 0.6136,
+      "mrr": 0.4014,
+      "count": 44
+    },
+    "综合": {
+      "hit@k": 0.25,
+      "mrr": 0.25,
+      "count": 8
+    }
+  },
+  "records": [
+    {
+      "question": "DeepSeek 模型的训练数据规模是多少？",
+      "answer": "不同版本的 DeepSeek 训练数据规模不同：\n\n- **DeepSeek LLM（初代）**：约 **2 万亿 tokens**\n- **DeepSeek-V2**：约 **8.1 万亿 tokens**\n- **DeepSeek-V3**：约 **14.8 万亿 tokens**\n- **DeepSeek-R1**：未公开完整预训练数据，通常基于 V3 底座训练\n\n如果指最新主流模型，**DeepSeek-V3/R1 的预训练规模约为 14.8 万亿 tokens**。",
+      "contexts": [],
+      "sources": [],
+      "trace": [
+        "router: need_retrieval=False（该问题询问 DeepSeek 模型的训练数据规模，与 LangChain/LangGraph 技术文档无关。）",
+        "generate: 直接回答（无需检索）"
+      ],
+      "elapsed": 9.548878900008276,
+      "refusal": false,
+      "type": "越界",
+      "golden": [],
+      "ground_truth": "__REFUSAL__"
+    },
+    {
+      "question": "如何用 LangGraph 做红烧肉的菜谱推荐？",
+      "answer": "根据现有资料无法回答该问题。（已尝试 2 次检索与查询重写，仍未找到相关资料。）建议：换个更具体的问法，或补充相关文档到语料库。",
+      "contexts": [
+        "## LangGraph ecosystem\n\nWhile LangGraph can be used standalone, it also integrates seamlessly with any LangChain product, giving developers a full suite of tools for building agents. To improve your LLM application development, pair LangGraph with:",
+        "ce.langchain.com/python/langgraph/checkpoints/#langgraph.checkpoint.postgres.aio.AsyncPostgresSaver)), used in LangSmith. Ideal for using in production. Needs to be installed separately.",
+        "LangGraph provides two complementary persistence systems:",
+        "LangGraph is inspired by [Pregel](https://research.google/pubs/pub37252/) and [Apache Beam](https://beam.apache.org/). The public interface draws inspiration from [NetworkX](https://networkx.org/documentation/latest/). LangGraph is built by LangChain Inc, the creators of LangChain, but can be used",
+        "This guide demonstrates the basics of LangGraph's Graph API. It walks through [state](#define-and-update-state), as well as composing common graph structures such as [sequences](#create-a-sequence-of-steps), [branches](#create-branches), and [loops](#create-and-control-loops). It also covers LangGr"
+      ],
+      "sources": [
+        "31_overview.md",
+        "40_checkpointers.md",
+        "39_persistence.md",
+        "31_overview.md",
+        "35_use-graph-api.md"
+      ],
+      "trace": [
+        "router: need_retrieval=True（问题涉及如何使用 LangGraph 构建菜谱推荐应用，属于框架/技术用法问题，需要参考 LangGraph 相关文档。）",
+        "retrieve: 5 docs（query=如何用 LangGraph 做红烧肉的菜谱推荐？）",
+        "grade: irrelevant（参考资料仅涉及 LangGraph 的 Graph API、reducer 覆盖和 checkpointer 等技术概念）",
+        "rewrite: 新查询=LangGraph 菜谱推荐 食谱生成 应用案例",
+        "retrieve: 5 docs（query=LangGraph 菜谱推荐 食谱生成 应用案例）",
+        "grade: irrelevant（所有片段均只介绍 LangGraph 框架本身（生态系统、持久化、Graph API、设计灵感等），没有任何片段涉及红烧）",
+        "generate: 拒答（relevance=irrelevant, retry=1）"
+      ],
+      "elapsed": 9.28104419997544,
+      "refusal": true,
+      "type": "越界",
+      "golden": [],
+      "ground_truth": "__REFUSAL__"
+    },
+    {
+      "question": "LangChain 2028 年的发布路线图是什么？",
+      "answer": "截至 2026 年 5 月，LangChain 官方尚未公布 2028 年的发布路线图。这类项目通常只发布近期计划（如季度/年度方向），很少提前两年给出确定路线。建议关注 LangChain 官方博客、GitHub Releases、Discord 或 X 账号获取最新信息。",
+      "contexts": [],
+      "sources": [],
+      "trace": [
+        "router: need_retrieval=False（该问题询问 LangChain 2028 年的发布路线图，属于未来规划/预测信息，通常不在现有技术文档中，无法通过检索 LangChain/LangGraph 技术文档获得可靠答案。）",
+        "generate: 直接回答（无需检索）"
+      ],
+      "elapsed": 9.135850699996809,
+      "refusal": false,
+      "type": "越界",
+      "golden": [],
+      "ground_truth": "__REFUSAL__"
+    },
+    {
+      "question": "这份语料里有没有讲 Kubernetes 集群运维？",
+      "answer": "根据现有资料无法回答该问题。（已尝试 2 次检索与查询重写，仍未找到相关资料。）建议：换个更具体的问法，或补充相关文档到语料库。",
+      "contexts": [
+        "**Execution policies:**\n\n  * `HostExecutionPolicy` (default) - Native execution with full host access\n  * `DockerExecutionPolicy` - Isolated Docker container execution\n  * `CodexSandboxExecutionPolicy` - Sandboxed execution via Codex CLI\n\n  ```python theme={\"theme\":{\"light\":\"catppuccin-latte\",\"dark\":\"catppuccin-mocha\"}}\n  from langchain.agents import create_agent\n  from langchain.agents.middleware import (\n      ShellToolMiddleware,\n      HostExecutionPolicy,\n      DockerExecutionPolicy,\n      RedactionRule,\n  )\n\n\n  # Basic shell tool with host execution\n  agent = create_agent(\n      model=\"gpt-5.5\",\n      tools=[search_tool],\n      middleware=[\n          ShellToolMiddleware(\n              workspace_root=\"/workspace\",\n              execution_policy=HostExecutionPolicy(),\n          ),\n      ],\n  )\n\n  # Docker isolation with startup commands\n  agent_docker = create_agent(\n      model=\"gpt-5.5\",\n      tools=[],\n      middleware=[\n          ShellToolMiddleware(\n              workspace_root=\"/workspace\",\n              startup_commands=[\"pip install requests\", \"export PYTHONPATH=/workspace\"],\n              execution_policy=DockerExecutionPolicy(\n                  image=\"python:3.11-slim\",\n                  command_timeout=60.0,\n              ),\n          ),\n      ],\n  )\n\n  # With output redaction (applied post execution)\n  agent_redacted = create_agent(\n      model=\"gpt-5.5\",\n      tools=[],\n      middleware=[\n          ShellToolMiddleware(\n              workspace_root=\"/workspace\",\n              redaction_rules=[\n                  RedactionRule(pii_type=\"api_key\", detector=r\"sk-[a-zA-Z0-9]{32}\"),\n              ],\n          ),\n      ],\n  )\n  ```\n\n### Filesystem middleware",
+        "* `HostExecutionPolicy` - Full host access (default); best for trusted environments where the agent already runs inside a container or VM\n    * `DockerExecutionPolicy` - Launches a separate Docker container for each agent run, providing harder isolation",
+        "* **[Stores](/oss/python/langgraph/stores)** persist application-defined data outside the graph state. Use them for long-term, cross-thread memory, including user preferences, facts, and shared knowledge.",
+        "| Use for | Conversation continuity, human-in-the-loop, time travel, and fault tolerance | User preferences, facts, and shared knowledge |\n| Access pattern | Pass a `thread_id` in graph config | Read and write items from nodes or application code |",
+        "Servers to add:\n\n        * `docs-langchain`: [https://docs.langchain.com/mcp](https://docs.langchain.com/mcp)\n        * `reference-langchain`: [https://reference.langchain.com/mcp](https://reference.langchain.com/mcp)"
+      ],
+      "sources": [
+        "16_built-in.md",
+        "16_built-in.md",
+        "39_persistence.md",
+        "39_persistence.md",
+        "32_quickstart.md"
+      ],
+      "trace": [
+        "router: need_retrieval=True（用户询问当前语料中是否包含 Kubernetes 集群运维内容，需要检索文档库才能确认。）",
+        "retrieve: 5 docs（query=这份语料里有没有讲 Kubernetes 集群运维？）",
+        "grade: irrelevant（所有片段均来自 LangGraph/LangSmith 相关文档（interrupt、streaming、workflo）",
+        "rewrite: 新查询=Kubernetes 集群部署与运维 容器编排 K8s 节点管理 容器化部署 集",
+        "retrieve: 5 docs（query=Kubernetes 集群部署与运维 容器编排 K8s 节点）",
+        "grade: irrelevant（所有片段内容涉及执行策略（Host/Docker/CodexSandbox）、文件系统中间件、Stores 持久化以及 ）",
+        "generate: 拒答（relevance=irrelevant, retry=1）"
+      ],
+      "elapsed": 11.057085599983111,
+      "refusal": true,
+      "type": "越界",
+      "golden": [],
+      "ground_truth": "__REFUSAL__"
+    },
+    {
+      "question": "BAAI/bge-small-zh-v1.5 模型的参数量是多少？",
+      "answer": "BAAI/bge-small-zh-v1.5 的参数量约为 **24M（2400 万）**，属于轻量级中文嵌入模型，向量维度为 512，适合对速度和资源占用较敏感的场景。",
+      "contexts": [],
+      "sources": [],
+      "trace": [
+        "router: need_retrieval=False（该问题询问 BAAI/bge-small-zh-v1.5 模型的参数量，属于外部模型的基本信息/常识，不涉及 LangChain/LangGraph 技术文档中的具体概念、API 用法、配置项或代码写法，因此无需检索技术文档。）",
+        "generate: 直接回答（无需检索）"
+      ],
+      "elapsed": 10.505768300005002,
+      "refusal": false,
+      "type": "越界",
+      "golden": [],
+      "ground_truth": "__REFUSAL__"
+    },
+    {
+      "question": "公司内部的报销流程怎么走？",
+      "answer": "一般流程是：收集合规发票/凭证 → 在 OA 或财务系统填写报销单 → 部门负责人审批 → 财务审核 → 出纳打款。  \n不同公司差异较大，具体入口、时限和所需材料建议看公司报销制度，或直接问财务/行政。注意发票抬头、税号、预算归属和报销截止时间。",
+      "contexts": [],
+      "sources": [],
+      "trace": [
+        "router: need_retrieval=False（该问题询问公司内部报销流程，与 LangChain/LangGraph 技术文档无关，属于非技术类常识/内部事务问题。）",
+        "generate: 直接回答（无需检索）"
+      ],
+      "elapsed": 8.052980799984653,
+      "refusal": false,
+      "type": "越界",
+      "golden": [],
+      "ground_truth": "__REFUSAL__"
+    },
+    {
+      "question": "LangGraph 支持哪些编程语言的官方 SDK（除 Python/JS 外）？",
+      "answer": "根据现有资料无法回答该问题。（已尝试 2 次检索与查询重写，仍未找到相关资料。）建议：换个更具体的问法，或补充相关文档到语料库。",
+      "contexts": [
+        "/reference.langchain.com/python/langgraph/types/Command) object from node functions:",
+        "ce.langchain.com/python/langgraph/types/interrupt).",
+        "For LangGraph workflows, tool execution is handled by [`ToolNode`](https://reference.langchain.com/python/langgraph/agents/#langgraph.prebuilt.tool_node.ToolNode). See [ToolNode](/oss/python/langgraph/workflows-agents#toolnode) for Graph API usage, including how tools can access the current graph s",
+        "## Integrate with other libraries\n\n* [Add LangGraph's features to other frameworks using the functional API](/langsmith/deploy-other-frameworks): Add LangGraph features like persistence, memory and streaming to other agent frameworks that do not provide them out of the box.\n\n***",
+        "# Run a local server\n\nThis guide shows you how to run a LangGraph application locally.\n\n## Prerequisites\n\nBefore you begin, ensure you have the following:\n\n* An API key for [LangSmith](https://smith.langchain.com/settings) - free to sign up\n\n## 1. Install the LangGraph CLI\n\n  ```bash pip theme={\"theme\":{\"light\":\"catppuccin-latte\",\"dark\":\"catppuccin-mocha\"}}\n  # Python >= 3.11 is required.\n  pip install -U \"langgraph-cli[inmem]\"\n  ```"
+      ],
+      "sources": [
+        "35_use-graph-api.md",
+        "20_human-in-the-loop.md",
+        "07_tools.md",
+        "37_use-functional-api.md",
+        "58_local-server.md"
+      ],
+      "trace": [
+        "router: need_retrieval=True（该问题涉及 LangGraph 官方 SDK 支持的具体编程语言，属于需要查阅技术文档才能准确回答的技术事实问题。）",
+        "retrieve: 5 docs（query=LangGraph 支持哪些编程语言的官方 SDK（除 Py）",
+        "grade: irrelevant（所有片段仅提及 Python 和 TypeScript/JavaScript 的文档链接，没有任何内容说明 LangGr）",
+        "rewrite: 新查询=LangGraph 官方 SDK 支持的语言列表 Go Java C# .NET",
+        "retrieve: 5 docs（query=LangGraph 官方 SDK 支持的语言列表 Go Ja）",
+        "grade: irrelevant（所有片段涉及 LangGraph 的 Command 对象、interrupt、ToolNode、functional ）",
+        "generate: 拒答（relevance=irrelevant, retry=1）"
+      ],
+      "elapsed": 11.399334199988516,
+      "refusal": true,
+      "type": "越界",
+      "golden": [],
+      "ground_truth": "__REFUSAL__"
+    },
+    {
+      "question": "2026 年 LangChain 的融资额是多少？",
+      "answer": "截至我的知识更新（2024 年中），**没有 2026 年 LangChain 融资额的可靠公开记录**。已知最近一笔是 **2024 年 10 月**：LangChain 完成 **1.25 亿美元**融资，估值约 **12.5 亿美元**，由 IVP 领投。\n\n2025–2026 年若有新融资，我无法确认。建议查 Crunchbase、LangChain 官方博客或权威科技媒体。",
+      "contexts": [],
+      "sources": [],
+      "trace": [
+        "router: need_retrieval=False（该问题询问 LangChain 公司的融资额，属于商业/财务信息，而非技术概念、API 用法、配置项或代码写法等，不涉及技术文档内容。）",
+        "generate: 直接回答（无需检索）"
+      ],
+      "elapsed": 14.85497720001149,
+      "refusal": false,
+      "type": "越界",
+      "golden": [],
+      "ground_truth": "__REFUSAL__"
+    },
+    {
+      "question": "如果没有任何已设置的支持的 provider API key，应该怎么做？",
+      "answer": "根据资料[1]，如果没有任何已设置的支持的 provider API key（例如 `OPENAI_API_KEY`、`GOOGLE_API_KEY` 或 `ANTHROPIC_API_KEY`），应该：\n\n1. 询问用户要使用哪个 provider；\n2. 然后停止并等待用户创建 key，并在 shell 或 `.env` 文件中设置它；\n3. 不要发明或硬编码 API key [1]。",
+      "contexts": [
+        "Check whether a supported provider API key is already set (for example `OPENAI_API_KEY`, `GOOGLE_API_KEY`, or `ANTHROPIC_API_KEY`). If none is set, ask the user which provider to use, then stop and wait while they create a key and set it in the shell or a `.env` file. Do not invent, hardcode, or",
+        "* **A LangSmith API key**: Follow the [Create an API key](/langsmith/create-account-api-key) guide.",
+        "* **A LangSmith API key**: Follow the [Create an API key](/langsmith/create-account-api-key) guide.",
+        "* **A LangSmith API key**: Follow the [Create an API key](/langsmith/create-account-api-key) guide.",
+        "* **A LangSmith API key**: Follow the [Create an API key](/langsmith/create-account-api-key) guide."
+      ],
+      "sources": [
+        "01_quickstart.md",
+        "21_observability.md",
+        "22_studio.md",
+        "56_observability.md",
+        "57_studio.md"
+      ],
+      "trace": [
+        "router: need_retrieval=True（问题涉及未设置支持的 provider API key 时的处理方式，属于具体技术配置与使用问题，需要查阅 LangChain/LangGraph 相关文档。）",
+        "retrieve: 5 docs（query=如果没有任何已设置的支持的 provider API key）",
+        "grade: relevant（片段[1]明确说明：如果没有任何支持的provider API key已设置，应询问用户使用哪个provider，然后停）",
+        "generate: ok（5 docs, relevance=relevant）"
+      ],
+      "elapsed": 11.526345499994932,
+      "refusal": false,
+      "type": "简单事实",
+      "golden": [
+        "01_quickstart.md"
+      ],
+      "ground_truth": "询问用户要使用哪个提供商，然后停下来等待他们创建密钥并在 shell 或 .env 文件中设置。不要发明、硬编码或提交 API 密钥。"
+    },
+    {
+      "question": "在快速入门中，第一步需要做什么？",
+      "answer": "根据参考资料[1]，在快速入门中，第一步是**阅读指南**（Step 1: Read the guide）。[1]",
+      "contexts": [
+        "# Quickstart\n\n> Build your first agent in minutes\n\nThis quickstart shows you how to create a fully functional AI agent in just a few minutes.\n\n  Build a basic LangChain agent in this working directory by following the LangChain quickstart.\n\n  ## Step 1: Read the guide",
+        "## Next steps\n\nYou now have agents that can:",
+        "In this walkthrough, we'll guide you through the thought process of building a customer support email agent with LangGraph.\n\n## Start with the process you want to automate",
+        "### Quick start\n\nThe fastest way to get started is using the hosted version:",
+        "## Step 2: Identify what each step needs to do\n\nFor each node in your graph, determine what type of operation it represents and what context it needs to work properly.\n\n    Use when you need to understand, analyze, generate text, or make reasoning decisions"
+      ],
+      "sources": [
+        "01_quickstart.md",
+        "01_quickstart.md",
+        "51_thinking-in-langgraph.md",
+        "59_ui.md",
+        "51_thinking-in-langgraph.md"
+      ],
+      "trace": [
+        "router: need_retrieval=True（问题询问快速入门文档中的第一步，属于具体文档内容，需要检索 LangChain/LangGraph 技术文档才能准确回答。）",
+        "retrieve: 5 docs（query=在快速入门中，第一步需要做什么？）",
+        "grade: relevant（参考资料[1]中明确包含“## Step 1: Read the guide”，直接回答了快速入门的第一步需要做什么。）",
+        "generate: ok（5 docs, relevance=relevant）"
+      ],
+      "elapsed": 9.380257200013148,
+      "refusal": false,
+      "type": "简单事实",
+      "golden": [
+        "01_quickstart.md"
+      ],
+      "ground_truth": "第一步是阅读指南，检测项目使用 Python 还是 TypeScript/JavaScript，然后获取并遵循匹配的页面，并将其视为包名、模型字符串和代码的准确来源。"
+    },
+    {
+      "question": "该文档片段提到可以在一个地方检查哪些内容？",
+      "answer": "根据资料 [3]，可以在一个地方检查以下内容：\n\n- traces（追踪）\n- tool calls（工具调用）\n- state transitions（状态转换）\n- latency（延迟）\n\n原文表述为：*\"Inspect traces, tool calls, state transitions, and latency in one place.\"* [3]",
+      "contexts": [
+        "`metadata` can capture the source of the document, its relationship to other documents, and other information. An individual [`Document`](https://reference.langchain.com/python/langchain-core/documents/base/Document) often represents a chunk of a larger document.",
+        "# Checkpointers\n\n> LangGraph checkpointers save graph state as checkpoints at each step, enabling persistence, human-in-the-loop, and fault-tolerant execution.",
+        "Inspect traces, tool calls, state transitions, and latency in one place. Find failure modes, evaluate quality, and improve agent behavior with execution data.\n\n***\n\n    [Connect these docs](/use-these-docs) to your agent of choice via MCP for real-time answers.",
+        "## Video guide\n\n  For more information about deployed agents, see [Deployment](/oss/python/langchain/deploy).\n\n***\n\n    [Connect these docs](/use-these-docs) to your agent of choice via MCP for real-time answers.",
+        "## Video guide\n\n***\n\n    [Connect these docs](/use-these-docs) to your agent of choice via MCP for real-time answers."
+      ],
+      "sources": [
+        "12_knowledge-base.md",
+        "40_checkpointers.md",
+        "02_overview.md",
+        "22_studio.md",
+        "57_studio.md"
+      ],
+      "trace": [
+        "router: need_retrieval=True（问题涉及具体文档片段中提到的检查内容，需要检索相关技术文档才能准确回答。）",
+        "retrieve: 5 docs（query=该文档片段提到可以在一个地方检查哪些内容？）",
+        "grade: relevant（片段[3]明确提到可以在一处检查 traces、tool calls、state transitions 和 laten）",
+        "generate: ok（5 docs, relevance=relevant）"
+      ],
+      "elapsed": 6.5301282000145875,
+      "refusal": false,
+      "type": "简单事实",
+      "golden": [
+        "02_overview.md"
+      ],
+      "ground_truth": "可以在一个地方检查追踪（traces）、工具调用（tool calls）、状态转换（state transitions）和延迟（latency）。"
+    },
+    {
+      "question": "如何将文档连接到所选的智能体？",
+      "answer": "根据现有资料，将文档连接到所选智能体的方式是：为你的 AI 编码助手安装 LangChain Docs MCP 服务器，从而让智能体能够查询最新的 LangChain、LangGraph、LangSmith 文档和 API 参考 [1][3][4]。\n\n资料中提到需要连接两个 LangChain 文档 MCP 服务器，并给出了“Servers to add:”的提示，但具体服务器列表内容在现有资料中并未完整提供 [1][2]。因此，根据现有资料无法给出具体的服务器地址、配置代码或操作步骤。",
+      "contexts": [
+        "Connect both LangChain documentation MCP servers to my coding agent so it can look up current LangChain, LangGraph, and LangSmith docs and API reference.\n\n        Servers to add:",
+        "Connect both LangChain documentation MCP servers to my coding agent so it can look up current LangChain, LangGraph, and LangSmith docs and API reference.\n\n        Servers to add:",
+        "**Using an AI coding assistant?**\n\n  * Install the [LangChain Docs MCP servers](/use-these-docs) to give your agent access to up-to-date LangChain documentation and examples.",
+        "**Using an AI coding assistant?**\n\n  * Install the [LangChain Docs MCP servers](/use-these-docs) to give your agent access to up-to-date LangChain documentation and examples.",
+        "Traces are a series of steps that your application takes to go from input to output. Each of these individual steps is represented by a run. You can use [LangSmith](https://smith.langchain.com?utm_source=docs\\&utm_medium=cta\\&utm_campaign=langsmith-signup\\&utm_content=oss-langgraph-observability) t"
+      ],
+      "sources": [
+        "01_quickstart.md",
+        "32_quickstart.md",
+        "01_quickstart.md",
+        "32_quickstart.md",
+        "56_observability.md"
+      ],
+      "trace": [
+        "router: need_retrieval=True（问题涉及将文档连接到智能体的具体技术实现，可能涉及 LangChain/LangGraph 中的检索增强、工具或文档加载器等 API 用法，需要查阅相关技术文档。）",
+        "retrieve: 5 docs（query=如何将文档连接到所选的智能体？）",
+        "grade: relevant（参考资料[1][2][3][4]均包含将LangChain文档MCP服务器安装/连接到编码智能体的关键信息（'Conne）",
+        "generate: ok（5 docs, relevance=relevant）"
+      ],
+      "elapsed": 15.00515870001982,
+      "refusal": false,
+      "type": "简单事实",
+      "golden": [
+        "03_install.md"
+      ],
+      "ground_truth": "通过 MCP 连接这些文档到你的智能体，以获取实时答案。"
+    },
+    {
+      "question": "代理在承担复杂工作时，中间件生态系统在哪些关键领域提供支持？",
+      "answer": "根据现有资料无法回答该问题。（已尝试 2 次检索与查询重写，仍未找到相关资料。）建议：换个更具体的问法，或补充相关文档到语料库。",
+      "contexts": [
+        "## Customizing agent memory\n\nBy default, agents use [`AgentState`](https://reference.langchain.com/python/langchain/agents/middleware/types/AgentState) to manage short term memory, specifically the conversation history via a `messages` key.",
+        "Agents are especially useful when they can take action rather than just generate text. The execution environment gives the agent a workspace: tools it can call, a filesystem for reading and writing files across turns, and code execution for running scripts or shell commands.\n\n  ```python Google theme={\"theme\":{\"light\":\"catppuccin-latte\",\"dark\":\"catppuccin-mocha\"}}\n  from langchain.agents import create_agent\n  from deepagents.backends import StateBackend\n  from deepagents.middleware import FilesystemMiddleware\n\n  agent = create_agent(\n      model=\"google_genai:gemini-3.6-flash\",\n      tools=[search],\n      middleware=[FilesystemMiddleware(backend=StateBackend())],\n  )\n  ```",
+        "Agent Server auto-detects which capabilities your checkpointer implements at startup and activates the corresponding features.\n\n### Delta channel support\n\n  **DeltaChannel is in beta.** The API and on-disk representation may change while the design stabilizes.",
+        "[Deep Agents](/oss/python/deepagents/overview) builds on `create_agent` and comes with commonly useful capabilities already assembled, such as planning, file system tools, subagents, and memory. Use `create_agent` when you need to configure the harness yourself.\n\n## Core components\n\n### Model",
+        "### Agent state\n\nEvery agent manages its execution context through [`AgentState`](https://reference.langchain.com/python/langchain/agents/middleware/types/AgentState), a typed dictionary that holds the current conversation history and any custom fields your tools and middleware need."
+      ],
+      "sources": [
+        "10_short-term-memory.md",
+        "04_agents.md",
+        "40_checkpointers.md",
+        "04_agents.md",
+        "04_agents.md"
+      ],
+      "trace": [
+        "router: need_retrieval=True（问题涉及代理与中间件生态系统的技术概念和架构支持领域，需要查阅相关技术文档才能准确回答。）",
+        "retrieve: 5 docs（query=代理在承担复杂工作时，中间件生态系统在哪些关键领域提供支持？）",
+        "grade: irrelevant（参考资料未明确列出中间件生态系统在复杂代理工作中支持的关键领域；仅[1][5]提及中间件与流转换相关，但不足以回答整体问）",
+        "rewrite: 新查询=AI Agent 中间件生态系统 关键支持领域 上下文工程 记忆存储 工具调用 ",
+        "retrieve: 5 docs（query=AI Agent 中间件生态系统 关键支持领域 上下文工程 ）",
+        "grade: irrelevant（参考片段分别介绍了 AgentState 短期记忆、执行环境与 FilesystemMiddleware 用法、chec）",
+        "generate: 拒答（relevance=irrelevant, retry=1）"
+      ],
+      "elapsed": 33.894201799994335,
+      "refusal": true,
+      "type": "简单事实",
+      "golden": [
+        "04_agents.md"
+      ],
+      "ground_truth": "提供工具、文件系统、沙箱和代码执行；摘要、记忆、技能和提示缓存；待办列表和子代理用于并行、隔离的工作；重试、回退和调用限制；PII检测和内容控制；以及在高影响操作前进行人工审批。"
+    },
+    {
+      "question": "Models can be used in which two ways according to the document?",
+      "answer": "根据参考资料 [4]，模型（model）的指定方式有两种：\n\n1. **只指定模型本身**：给出你想在某个 provider 下使用的具体模型的名称或标识符。\n2. **在单个参数中同时指定模型与 provider**：使用 `{model_provider}:{model}` 格式，例如 `'openai:o1'`。\n\n```python\n# 方式一：模型名/标识符\nmodel = \"o1\"\n\n# 方式二：provider:model 格式\nmodel = \"openai:o1\"\n```\n\n需要说明的是，现有资料仅从\"如何指定模型\"的角度列出这两种写法 [4]，并未以\"模型的两种使用方式\"来表述，因此上述回答是对 [4] 内容的归纳。",
+      "contexts": [
+        "If the user prefers another chat model provider from the integrations docs, adapt the example accordingly after confirming.",
+        "Tools should be well-documented: their name, description, and argument names become part of the model's prompt.",
+        "When the model issues a tool call for one of these tools, the run **interrupts** instead of executing the tool locally. Your app can inspect the payload, perform the action in the right environment (for example a browser, another service, or a human review step), then **resume** the graph with the",
+        "The name or identifier of the specific model you want to use with a provider. You can also specify both the model and its provider in a single argument using the '{model_provider}:{model}' format, for example, 'openai:o1'.",
+        "The examples above use `wrap_model_call` to make **transient** updates - modifying what messages are sent to the model for a single call without changing what's saved in state.\n\n  For **persistent** updates that modify state, you can:"
+      ],
+      "sources": [
+        "32_quickstart.md",
+        "01_quickstart.md",
+        "07_tools.md",
+        "05_models.md",
+        "18_context-engineering.md"
+      ],
+      "trace": [
+        "router: need_retrieval=True（问题询问文档中关于 Models 的两种使用方式，属于具体技术文档内容，需要检索相关文档才能准确回答。）",
+        "retrieve: 5 docs（query=Models can be used in which tw）",
+        "grade: relevant（片段[4]明确说明可以使用模型名称或标识符（与提供商一起），也可以使用 '{model_provider}:{model）",
+        "generate: ok（5 docs, relevance=relevant）"
+      ],
+      "elapsed": 17.17960969998967,
+      "refusal": false,
+      "type": "简单事实",
+      "golden": [
+        "05_models.md"
+      ],
+      "ground_truth": "Models can be used with agents (dynamically specified when creating an agent) or standalone (called directly for tasks like text generation, classification, or extraction)."
+    },
+    {
+      "question": "Prompt caching 通常在什么条件下才会被启用？",
+      "answer": "根据现有资料，Prompt caching 通常只有在**输入 token 超过某个最低阈值**时才会被启用 [1]。具体的最低 token 阈值需查阅对应 provider 的页面 [1]。",
+      "contexts": [
+        "Prompt caching is often only engaged above a minimum input token threshold. See [provider pages](/oss/python/integrations/chat) for details.\n\nCache usage will be reflected in the [usage metadata](/oss/python/langchain/messages#token-usage) of the model response.\n\n### Server-side tool use",
+        "effects around `interrupt()`, see [Side effects called before `interrupt` must be idempotent](/oss/python/langgraph/interrupts#side-effects-called-before-interrupt-must-be-idempotent).",
+        "| `node_attempt` | `int` | Current execution attempt number (1-indexed). `1` on the first try, `2` on the first retry, etc. |\n| `node_first_attempt_time` | `float \\| None` | Unix timestamp (seconds) of when the first attempt started. Stays the same across retries. |",
+        "cific tools), or when you need to enforce sequential constraints that unlock capabilities only after certain conditions are met.",
+        "| Attribute | Type | Description |\n| - | - | - |\n| `node_attempt` | `int` | Current attempt number (1-indexed). `1` on the first try, `2` on the first retry, etc. |\n| `node_first_attempt_time` | `float \\| None` | Unix timestamp of when the first attempt started. Constant across retries. |"
+      ],
+      "sources": [
+        "05_models.md",
+        "34_graph-api.md",
+        "35_use-graph-api.md",
+        "29_multi-agent.md",
+        "53_fault-tolerance.md"
+      ],
+      "trace": [
+        "router: need_retrieval=True（问题涉及 Prompt caching 的启用条件，属于具体技术概念和配置行为，需要检索相关技术文档才能准确回答。）",
+        "retrieve: 5 docs（query=Prompt caching 通常在什么条件下才会被启用？）",
+        "grade: relevant（参考资料[1]明确说明 Prompt caching 通常在超过最小输入 token 阈值时才会启用，直接回答了用户问题）",
+        "generate: ok（5 docs, relevance=relevant）"
+      ],
+      "elapsed": 9.460238499974366,
+      "refusal": false,
+      "type": "简单事实",
+      "golden": [
+        "05_models.md"
+      ],
+      "ground_truth": "Prompt caching 通常只有在输入 token 数量超过某个最低阈值时才会被启用。"
+    },
+    {
+      "question": "LangChain v1 中引入的 content blocks 与现有的 content 属性是什么关系？",
+      "answer": "根据现有资料，LangChain v1 中引入的 content blocks **不是对现有 `content` 属性的替代**，而是一个**新增属性**，用于以标准化格式访问消息内容 [1]。其引入目的是在跨提供商之间标准化内容格式，同时保持与现有代码的向后兼容性 [2]。\n\n同时，LangChain 聊天模型仍然接受通过 `content` 属性传入消息内容 [3]。因此二者关系可概括为：\n\n- `content`：现有属性，仍被支持和使用 [1][3]；\n- content blocks：新增的标准化内容访问方式，不替代 `content`，而是提供标准化格式 [1][2]。",
+      "contexts": [
+        "Content blocks are not a replacement for the [`content`](https://reference.langchain.com/python/langchain-core/messages/base/BaseMessage) property, but rather a new property that can be used to access the content of a message in a standardized format.\n\n## Serialization",
+        "Content blocks were introduced as a new property on messages in LangChain v1 to standardize content formats across providers while maintaining backward compatibility with existing code.",
+        "Separately, LangChain provides dedicated content types for text, reasoning, citations, multi-modal data, server-side tool calls, and other message content. See [content blocks](#standard-content-blocks) below.\n\nLangChain chat models accept message content in the `content` attribute.",
+        "tm_content=oss-langchain-tools). Follow the [tracing quickstart](/langsmith/trace-with-langchain) to get set up.",
+        "* [Standard content blocks](/oss/python/langchain/messages#standard-content-blocks)—Understand the normalized content block format used for reasoning, text, and other content types"
+      ],
+      "sources": [
+        "06_messages.md",
+        "06_messages.md",
+        "06_messages.md",
+        "07_tools.md",
+        "08_streaming.md"
+      ],
+      "trace": [
+        "router: need_retrieval=True（问题涉及 LangChain v1 中 content blocks 与 content 属性的具体技术概念和 API 设计关系，属于需要查阅技术文档才能准确回答的内容。）",
+        "retrieve: 5 docs（query=LangChain v1 中引入的 content bloc）",
+        "grade: relevant（片段[1]明确指出 content blocks 不是 content 属性的替代品，而是一个新属性，用于以标准化格式访）",
+        "generate: ok（5 docs, relevance=relevant）"
+      ],
+      "elapsed": 11.122288600017782,
+      "refusal": false,
+      "type": "简单事实",
+      "golden": [
+        "06_messages.md"
+      ],
+      "ground_truth": "Content blocks 并不是用来替代 content 属性的，而是一个新属性，用于以标准化格式访问消息内容，同时保持与现有代码的向后兼容性。"
+    },
+    {
+      "question": "什么是 headless tools？它们是如何运行的？",
+      "answer": "**Headless tools 是什么**\n\nHeadless tools 是**工具定义**，包括名称、描述和参数 schema，注册在**服务器端**并交给 agent 使用；但它的**实现**不注册在服务器进程里，而是注册在用户应用运行的地方（通常是浏览器/客户端）[4]。\n\n**它们如何运行**\n\n- 它们应在**用户应用运行的环境**中执行，而不是在服务器进程内执行[4]。\n- 这与普通工具不同：普通工具的函数体在服务器上运行；也不同于 server-side tool use，后者由模型提供商远程执行内置工具[1]。\n- 当任务依赖**仅存在于客户端的环境、设备或 UI** 时，应使用 headless tools[2]。\n\n**补充说明**\n\n参考资料中关于“implementation is registered only on ...”的句子被截断，因此具体实现如何注册、服务器与客户端之间如何调用/通信，根据现有资料无法完整说明。",
+      "contexts": [
+        "This is different from ordinary tools whose function body runs on the server, and from [server-side tool use](#server-side-tool-use) where the model provider executes built-in tools remotely.\n\n### When to use headless tools",
+        "### When to use headless tools\n\nUse them when the work depends on the **environment, device, or UI** that only exists on the client. For example:",
+        "Tools can access runtime information through the [`ToolRuntime`](https://reference.langchain.com/python/langchain/tools/#langchain.tools.ToolRuntime) parameter, which provides:",
+        "Some tools should run **where your user's app runs** (typically the browser), not inside the process. **Headless tools** are tool definitions, which include the name, description, and argument schema, that you register on the **server** with your agent. The **implementation** is registered only on",
+        "Tools extend what [agents](/oss/python/langchain/agents) can do—letting them fetch real-time data, execute code, query external databases, and take actions in the world."
+      ],
+      "sources": [
+        "07_tools.md",
+        "07_tools.md",
+        "07_tools.md",
+        "07_tools.md",
+        "07_tools.md"
+      ],
+      "trace": [
+        "router: need_retrieval=True（问题涉及具体技术概念 headless tools 及其运行机制，需要检索相关技术文档才能准确回答。）",
+        "retrieve: 5 docs（query=什么是 headless tools？它们是如何运行的？）",
+        "grade: relevant（片段[4]直接定义了 headless tools 是注册在服务器端的工具定义（名称、描述、参数模式），其实现仅注册在客）",
+        "generate: ok（5 docs, relevance=relevant）"
+      ],
+      "elapsed": 17.802285599987954,
+      "refusal": false,
+      "type": "简单事实",
+      "golden": [
+        "07_tools.md"
+      ],
+      "ground_truth": "Headless tools 是包含名称、描述和参数模式的工具定义，注册在服务器上；其实现仅注册在客户端，并在短暂的 interrupt/resume 握手后执行。"
+    },
+    {
+      "question": "当模型在一次步骤中调用多个并行工具时，代理在什么条件下会路由到 END？",
+      "answer": "当模型在一次步骤中调用多个并行工具时，所有工具会先执行；全部完成后，只有当该批次中**每一个**工具都设置了 `return_direct=True`，代理才会路由到 `END` [2][3]。\n\n如果该批次中有任一工具没有 `return_direct=True`，代理不会退出，而是带着该批次所有 `ToolMessage` 路由回模型，让模型继续推理 [5]。",
+      "contexts": [
+        "* **[Return from tools](#return-from-tools)**: Similar to return from nodes, combine state updates and control flow from inside a tool.",
+        "* **Multiple parallel tool calls:** When the model calls several tools in one step, all of them execute first. After all tools finish, the agent routes to `END` only if **every** tool in that batch has `return_direct=True`. The final response includes the `ToolMessage` outputs of every tool that wa",
+        "el can reason over all results. `return_direct` only short-circuits the loop when every tool call in the step has `return_direct=True`.",
+        "#### What the runtime needs\n\nWhen loading a checkpoint whose delta channels are absent from `channel_values`, LangGraph calls `saver.get_delta_channel_history(config=config, channels=[...])`. This returns, for each channel:",
+        "**Mixed parallel calls:** If the model calls a `return_direct=True` tool alongside tools that do not have `return_direct=True`, the agent does **not** exit after that step. It routes back to the model with every `ToolMessage` from the batch, so the model can reason over all results. `return_direc"
+      ],
+      "sources": [
+        "34_graph-api.md",
+        "07_tools.md",
+        "07_tools.md",
+        "40_checkpointers.md",
+        "07_tools.md"
+      ],
+      "trace": [
+        "router: need_retrieval=True（该问题涉及 LangGraph 代理（agent）在并行工具调用场景下的路由逻辑与 END 终止条件，属于具体框架机制/API 行为问题，需要查阅技术文档才能准确回答。）",
+        "retrieve: 5 docs（query=当模型在一次步骤中调用多个并行工具时，代理在什么条件下会路由）",
+        "grade: relevant（参考资料[2]明确说明：当模型一步调用多个并行工具时，所有工具先执行；全部完成后，仅当该批次中每个工具都设置了 retu）",
+        "generate: ok（5 docs, relevance=relevant）"
+      ],
+      "elapsed": 10.769695900002262,
+      "refusal": false,
+      "type": "简单事实",
+      "golden": [
+        "07_tools.md"
+      ],
+      "ground_truth": "只有当该批次中每个工具的 return_direct 都为 True 时，代理才会在所有这些工具执行完毕后路由到 END。"
+    },
+    {
+      "question": "LangChain 的流式系统对应用的主要好处是什么？",
+      "answer": "根据现有资料，LangChain 的流式系统对应用的主要好处是：**让应用能够呈现来自 agent 运行的实时反馈/实时更新** [2][3]。\n\n具体来说，资料提到 LangChain 实现了流式系统来暴露实时更新 [2]，并让开发者可以将 agent 运行中的实时反馈展示到应用中 [3]。资料中未进一步列出其他具体好处。",
+      "contexts": [
+        "ence.langchain.com/python/langchain-core/retrievers/BaseRetriever) are Runnables, so they support standard methods such as sync and async `invoke` and `batch`.",
+        "LangChain implements a streaming system to surface real-time updates.",
+        "## Overview\n\nLangChain's streaming system lets you surface live feedback from agent runs to your application.\n\nWhat's possible with LangChain streaming:",
+        "LangChain [`VectorStore`](https://reference.langchain.com/python/langchain-core/vectorstores/base/VectorStore) objects do not subclass [`Runnable`](https://reference.langchain.com/python/langchain-core/runnables/base/Runnable). [Retrievers](https://reference.langchain.com/python/langchain-core/retr",
+        "We will commonly use [LangChain](/oss/python/langchain/overview) components throughout the documentation to integrate models and tools, but you don't need to use LangChain to use LangGraph. If you are just getting started with agents or want a higher-level abstraction, we recommend you use LangChai"
+      ],
+      "sources": [
+        "12_knowledge-base.md",
+        "08_streaming.md",
+        "08_streaming.md",
+        "12_knowledge-base.md",
+        "31_overview.md"
+      ],
+      "trace": [
+        "router: need_retrieval=True（该问题涉及 LangChain 流式系统的具体技术概念及其对应用的主要好处，需要查阅相关技术文档才能准确回答。）",
+        "retrieve: 5 docs（query=LangChain 的流式系统对应用的主要好处是什么？）",
+        "grade: relevant（片段[3]明确指出 LangChain 流式系统的主要好处是让应用能实时呈现 agent 运行的实时反馈（surface）",
+        "generate: ok（5 docs, relevance=relevant）"
+      ],
+      "elapsed": 14.915982600010466,
+      "refusal": false,
+      "type": "简单事实",
+      "golden": [
+        "08_streaming.md"
+      ],
+      "ground_truth": "它能提升应用的响应性，通过逐步显示输出来显著改善用户体验，尤其是在应对 LLM 延迟时。"
+    },
+    {
+      "question": "LangChain 推荐使用什么方式来实现实时流式更新？",
+      "answer": "根据现有资料，只能得到如下信息：LangChain 实现了一套流式（streaming）系统，用于呈现实时更新 [5]。\n\n但关于\"推荐使用哪种具体方式（如某个 API 或函数）\"来实现流式更新，现有资料中并未给出说明。**根据现有资料无法回答该问题**的具体实现方式部分。",
+      "contexts": [
+        "LangChain's [`@tool` decorator](https://reference.langchain.com/python/langchain-core/tools/convert/tool) adds metadata and enables runtime injection with the `ToolRuntime` parameter.\n      Learn more in the [tools guide](/oss/python/langchain/tools).",
+        "Servers to add:\n\n        * `docs-langchain`: [https://docs.langchain.com/mcp](https://docs.langchain.com/mcp)\n        * `reference-langchain`: [https://reference.langchain.com/mcp](https://reference.langchain.com/mcp)",
+        "Servers to add:\n\n        * `docs-langchain`: [https://docs.langchain.com/mcp](https://docs.langchain.com/mcp)\n        * `reference-langchain`: [https://reference.langchain.com/mcp](https://reference.langchain.com/mcp)",
+        "Set up [LangSmith](https://smith.langchain.com?utm_source=docs\\&utm_medium=cta\\&utm_campaign=langsmith-signup\\&utm_content=oss-langchain-install) tracing to debug your first LangChain app. Follow the [tracing quickstart](/langsmith/trace-with-langchain) to get started. We recommend you also set u",
+        "LangChain implements a streaming system to surface real-time updates."
+      ],
+      "sources": [
+        "01_quickstart.md",
+        "01_quickstart.md",
+        "32_quickstart.md",
+        "03_install.md",
+        "08_streaming.md"
+      ],
+      "trace": [
+        "router: need_retrieval=True（问题涉及 LangChain 中实现实时流式更新的具体推荐方式，属于技术框架/API 用法问题，需要检索 LangChain 技术文档。）",
+        "retrieve: 5 docs（query=LangChain 推荐使用什么方式来实现实时流式更新？）",
+        "grade: relevant（片段[5]明确指出 LangChain 实现了一个流式系统（streaming system）来呈现实时更新，直接对应问）",
+        "generate: ok（5 docs, relevance=relevant）"
+      ],
+      "elapsed": 9.641301099996781,
+      "refusal": false,
+      "type": "简单事实",
+      "golden": [
+        "08_streaming.md"
+      ],
+      "ground_truth": "对于新应用，推荐使用事件流（event streaming），即 LangChain v1.3 中引入的类型化投影 API。它提供每个投影（消息、值、工具调用、子图）独立的迭代器，可以独立消费，无需在 stream_mode 块上分支。"
+    },
+    {
+      "question": "结构化输出可以以哪些形式返回数据？",
+      "answer": "根据现有资料，结构化输出可以让智能体以特定、可预测的格式返回数据，具体形式包括：\n\n- JSON 对象\n- Pydantic 模型\n- dataclasses\n\n这样应用无需解析自然语言响应，而是直接获得结构化数据 [1]。\n\n另外，资料提到 Pydantic/dataclass 输出可能返回普通 dict，或强制转换为 model/dataclass 实例 [2]。",
+      "contexts": [
+        "Structured output allows agents to return data in a specific, predictable format. Instead of parsing natural language responses, you get structured data in the form of JSON objects, [Pydantic models](https://docs.pydantic.dev/latest/concepts/models/#basic-model-usage), or dataclasses that your appl",
+        "| Pydantic/dataclass output | Returns plain dict | Coerces to model/dataclass instance |",
+        "[Chat models](/oss/python/langchain/models) can accept multimodal data as input and generate\nit as output. Below we show short examples of input messages featuring multimodal data.\n\n  Extra keys can be included top-level in the content block or nested in `\"extras\": {\"key\": value}`.",
+        "`include_raw=True`](https://reference.langchain.com/python/langchain-core/language_models/chat_models/BaseChatModel/with_structured_output) when calling [`with_structured_output`](https://reference.langchain.com/python/langchain-core/language_models/chat_models/BaseChatModel/with_structured_output):",
+        "ds to yield streamed outputs as iterators. Pass one or more [stream modes](#stream-modes) to control what data you receive."
+      ],
+      "sources": [
+        "09_structured-output.md",
+        "43_streaming.md",
+        "06_messages.md",
+        "05_models.md",
+        "43_streaming.md"
+      ],
+      "trace": [
+        "router: need_retrieval=True（问题询问结构化输出可返回的数据形式，属于 LangChain 技术概念与 API 用法，需要检索相关文档确认支持的类型和方式。）",
+        "retrieve: 5 docs（query=结构化输出可以以哪些形式返回数据？）",
+        "grade: relevant（参考资料[1]明确指出结构化输出可以以 JSON objects、Pydantic models 或 dataclass）",
+        "generate: ok（5 docs, relevance=relevant）"
+      ],
+      "elapsed": 11.850396199995885,
+      "refusal": false,
+      "type": "简单事实",
+      "golden": [
+        "09_structured-output.md"
+      ],
+      "ground_truth": "JSON对象、Pydantic模型或dataclasses。"
+    },
+    {
+      "question": "在使用agent时如何实现结构化输出？",
+      "answer": "在使用 agent 时，实现结构化输出主要是让 agent 返回特定、可预测格式的数据，例如 JSON 对象、Pydantic 模型或 dataclasses，而不是解析自然语言响应[1]。\n\n具体方式包括：\n\n1. 通过模型的方法参数选择结构化输出方法，具体支持取决于提供商：\n   - `'json_schema'`：使用提供商提供的专用结构化输出功能[2]。\n   - `'function_calling'`：通过强制发起遵循给定 schema 的工具调用来派生结构化输出[3]。\n   - `'json_mode'`：某些提供商提供的 `'json_schema'` 前身；生成有效 JSON，但 schema 必须在提示中描述[3]。\n2. 在 `create_agent` 中，结构化输出策略可以自动推断，例如通过检查是否支持原生结构化输出特性[5]。\n3. 内置中间件也可使用结构化输出来询问 LLM 哪些工具最相关，其结构化输出 schema 定义可用工具名称和描述；模型提供商通常会在后台把该结构化输出信息添加到系统提示中[4]。\n\n参考资料未提供具体的代码示例；仅说明可返回 JSON 对象、Pydantic 模型或 dataclasses[1]。因此根据现有资料无法给出代码片段。",
+      "contexts": [
+        "Structured output allows agents to return data in a specific, predictable format. Instead of parsing natural language responses, you get structured data in the form of JSON objects, [Pydantic models](https://docs.pydantic.dev/latest/concepts/models/#basic-model-usage), or dataclasses that your appl",
+        "* **Method parameter**: Some providers support different methods for structured output:\n    * `'json_schema'`: Uses dedicated structured output features offered by the provider.",
+        "* `'function_calling'`: Derives structured output by forcing a [tool call](#tool-calling) that follows the given schema.\n    * `'json_mode'`: A precursor to `'json_schema'` offered by some providers. Generates valid JSON, but the schema must be described in the prompt.",
+        "This middleware uses structured output to ask an LLM which tools are most relevant for the current query. The structured output schema defines the available tool names and descriptions. Model providers often add this structured output information to the system prompt behind the scenes.",
+        "2. [Structured output](/oss/python/langchain/structured-output) strategies in `create_agent` can be inferred automatically (e.g., by checking support for native structured output features).\n3. Model inputs can be gated based on supported [modalities](#multimodal) and maximum input tokens."
+      ],
+      "sources": [
+        "09_structured-output.md",
+        "05_models.md",
+        "05_models.md",
+        "16_built-in.md",
+        "05_models.md"
+      ],
+      "trace": [
+        "router: need_retrieval=True（问题涉及 agent 中实现结构化输出的具体技术方法，属于 LangChain/LangGraph 相关技术文档范畴，需要检索以获取实现方式、API 用法或最佳实践。）",
+        "retrieve: 5 docs（query=在使用agent时如何实现结构化输出？）",
+        "grade: irrelevant（所有片段均未提及结构化输出（structured output）的实现方法，仅泛泛讨论agent、模型、流式输出等主题，）",
+        "rewrite: 新查询=LLM agent 结构化输出 structured output 实现方法：J",
+        "retrieve: 5 docs（query=LLM agent 结构化输出 structured out）",
+        "grade: relevant（参考资料包含实现结构化输出的关键信息，如通过method参数使用'json_schema'、'function_call）",
+        "generate: ok（5 docs, relevance=relevant）"
+      ],
+      "elapsed": 39.95819720000145,
+      "refusal": false,
+      "type": "简单事实",
+      "golden": [
+        "09_structured-output.md"
+      ],
+      "ground_truth": "使用 `create_agent` 来实现结构化输出；如果不在agent环境中直接对模型使用结构化输出，则参考 Models 文档。"
+    },
+    {
+      "question": "如何为代理添加短期记忆（线程级持久化）？",
+      "answer": "根据参考资料，为代理添加短期记忆（线程级持久化）需要在创建代理时指定一个 `checkpointer` [5]。\n\nLangChain 的代理将短期记忆作为代理状态的一部分进行管理 [5]。\n\n示例结构（依据资料 [5] 的描述）：\n\n```python\nagent = create_agent(\n    ...,\n    checkpointer=checkpointer,  # 指定 checkpointer 以启用线程级持久化\n)\n```\n\n注：现有资料仅说明需指定 `checkpointer` 及其作用，未给出完整的创建代码与具体参数配置，如需更详细的实现细节，根据现有资料无法回答该问题。",
+      "contexts": [
+        "# Long-term memory\n\n> Add long-term memory to LangChain agents to store and recall data across conversations and sessions",
+        "ate large values over time—for example, a conversation message list in a long-running thread. Without delta storage, the full list is re-serialized into every checkpoint; with `DeltaChannel`, only the new messages written at each step are stored.",
+        "Each memory is organized under a custom `namespace` (similar to a folder) and a distinct `key` (like a file name). Namespaces often include user or org IDs or other labels that makes it easier to organize information.",
+        "Choose the **Functional API** when you want to add LangGraph features to existing code with minimal changes, have simple linear workflows, or need rapid prototyping capabilities.",
+        "## Usage\n\nTo add short-term memory (thread-level persistence) to an agent, you need to specify a `checkpointer` when creating an agent.\n\n  LangChain's agent manages short-term memory as a part of your agent's state."
+      ],
+      "sources": [
+        "11_long-term-memory.md",
+        "54_pregel.md",
+        "11_long-term-memory.md",
+        "50_choosing-apis.md",
+        "10_short-term-memory.md"
+      ],
+      "trace": [
+        "router: need_retrieval=True（问题涉及代理的短期记忆和线程级持久化，属于 LangChain/LangGraph 中具体技术概念与配置用法，需要检索相关技术文档。）",
+        "retrieve: 5 docs（query=如何为代理添加短期记忆（线程级持久化）？）",
+        "grade: relevant（片段[5]明确说明为代理添加短期记忆（线程级持久化）需要在创建代理时指定 `checkpointer`，直接回答了用户问）",
+        "generate: ok（5 docs, relevance=relevant）"
+      ],
+      "elapsed": 7.688708299974678,
+      "refusal": false,
+      "type": "简单事实",
+      "golden": [
+        "10_short-term-memory.md"
+      ],
+      "ground_truth": "需要指定一个 checkpointer。"
+    },
+    {
+      "question": "工具如何访问长期记忆存储？",
+      "answer": "根据现有资料无法回答该问题。（已尝试 2 次检索与查询重写，仍未找到相关资料。）建议：换个更具体的问法，或补充相关文档到语料库。",
+      "contexts": [
+        "Add [memory](/oss/python/langchain/short-term-memory) to your agent to maintain state across interactions. This allows\n    the agent to remember previous conversations and context.\n\n    ```python theme={\"theme\":{\"light\":\"catppuccin-latte\",\"dark\":\"catppuccin-mocha\"}}\n    from langgraph.checkpoint.memory import InMemorySaver\n\n    checkpointer = InMemorySaver()\n    ```",
+        "### Long-term memory (Store)\n\nThe [`BaseStore`](https://reference.langchain.com/python/langchain-core/stores/BaseStore) provides persistent storage that survives across conversations. Unlike state (short-term memory), data saved to the store remains available in future sessions.",
+        "# Long-term memory\n\n> Add long-term memory to LangChain agents to store and recall data across conversations and sessions",
+        "1. Compile your agent with a checkpointer (the in-memory checkpointer [`InMemorySaver`](https://reference.langchain.com/python/langgraph/checkpoints/#langgraph.checkpoint.memory.InMemorySaver) will suffice for testing).",
+        "| **store** | An instance of \\[BaseStore]\\[langgraph.store.base.BaseStore]. Useful for [long-term memory](/oss/python/langgraph/use-functional-api#long-term-memory). |"
+      ],
+      "sources": [
+        "01_quickstart.md",
+        "07_tools.md",
+        "11_long-term-memory.md",
+        "60_test.md",
+        "36_functional-api.md"
+      ],
+      "trace": [
+        "router: need_retrieval=True（问题涉及具体技术概念'工具'和'长期记忆存储'，很可能与LangChain/LangGraph中工具访问记忆存储的API或配置相关，需要检索技术文档才能准确回答。）",
+        "retrieve: 5 docs（query=工具如何访问长期记忆存储？）",
+        "grade: irrelevant（所有片段仅介绍长期/短期记忆的概念和存储方式（如 BaseStore、InMemorySaver），但均未说明工具（to）",
+        "rewrite: 新查询=工具节点如何通过 BaseStore 读取和检索长期记忆，工具调用访问记忆存储的",
+        "retrieve: 5 docs（query=工具节点如何通过 BaseStore 读取和检索长期记忆，工）",
+        "grade: irrelevant（参考资料仅介绍了长期记忆的存储机制（BaseStore）和短期记忆的checkpointer，但未说明工具如何访问长期记）",
+        "generate: 拒答（relevance=irrelevant, retry=1）"
+      ],
+      "elapsed": 15.551111599983415,
+      "refusal": true,
+      "type": "简单事实",
+      "golden": [
+        "11_long-term-memory.md"
+      ],
+      "ground_truth": "工具可以使用 `runtime.store` 参数从存储中读取和写入。"
+    },
+    {
+      "question": "片段中提到的复杂应用示例是什么？",
+      "answer": "资料 [1] 提到的复杂应用示例是 **“sophisticated agent systems”**（复杂的 agent 系统），主要用于处理 **有状态、长时间运行的工作流** 带来的挑战 [1]。\n\n另外，资料 [3] 也指出 **多智能体模式（Multi-agent patterns）** 适用于复杂场景，例如：单个 agent 工具过多、任务需要专门知识且上下文很长、或需要强制顺序等 [3]。",
+      "contexts": [
+        "* [Production-ready deployment](/langsmith/deployment): Deploy sophisticated agent systems confidently with scalable infrastructure designed to handle the unique challenges of stateful, long-running workflows.",
+        "Not every tool is appropriate for every situation. Too many tools may overwhelm the model (overload context) and increase errors; too few limit capabilities. Dynamic tool selection adapts the available toolset based on authentication state, user permissions, feature flags, or conversation stage.",
+        "Multi-agent patterns are particularly valuable when a single agent has too many [tools](/oss/python/langchain/tools) and makes poor decisions about which to use, when tasks require specialized knowledge with extensive context (long prompts and domain-specific tools), or when you need to enforce seq",
+        "## Video guide\n\n  For more information about deployed agents, see [Deployment](/oss/python/langchain/deploy).\n\n***\n\n    [Connect these docs](/use-these-docs) to your agent of choice via MCP for real-time answers.",
+        "* Letting the model retry a failed tool call with corrected arguments.\n* Surfacing controlled, sanitized error messages instead of raw exception details.\n* Preventing unexpected tool exceptions from crashing the agent."
+      ],
+      "sources": [
+        "31_overview.md",
+        "18_context-engineering.md",
+        "29_multi-agent.md",
+        "22_studio.md",
+        "16_built-in.md"
+      ],
+      "trace": [
+        "router: need_retrieval=True（问题询问“片段中提到的复杂应用示例”，需要检索相关技术文档片段才能确定具体示例内容。）",
+        "retrieve: 5 docs（query=片段中提到的复杂应用示例是什么？）",
+        "grade: relevant（片段[1]提到“sophisticated agent systems”（复杂的智能体系统），片段[3]提到多智能体模式）",
+        "generate: ok（5 docs, relevance=relevant）"
+      ],
+      "elapsed": 36.78540550000616,
+      "refusal": false,
+      "type": "简单事实",
+      "golden": [
+        "12_knowledge-base.md"
+      ],
+      "ground_truth": "检索器可以用于更复杂的应用，例如检索增强生成（RAG），它将问题与检索到的上下文结合在提示中提供给LLM。"
+    },
+    {
+      "question": "该教程涵盖哪些主要步骤？",
+      "answer": "根据现有资料无法回答该问题。（已尝试 2 次检索与查询重写，仍未找到相关资料。）建议：换个更具体的问法，或补充相关文档到语料库。",
+      "contexts": [
+        "## Step 1: Read the guide\n\n  Detect whether this project uses Python or TypeScript/JavaScript. Fetch and follow the matching page; treat it as the source of truth for package names, model strings, and code:",
+        "## Step 1: Read the guide\n\n  Detect whether this project uses Python or TypeScript/JavaScript. Fetch and follow the matching page; treat it as the source of truth for package names, model strings, and code:",
+        "Application-level concerns: The caching discussion in Step 2 (whether to cache search results) is an application-level decision, not a LangGraph framework feature. You implement caching within your node functions based on your specific requirements—LangGraph doesn't prescribe this.",
+        "# Workflows and agents\n\nThis guide reviews common workflow and agent patterns.\n\n* Workflows have predetermined code paths and are designed to operate in a certain order.\n* Agents are dynamic and define their own processes and tool usage.",
+        "## Step 4: Implement the basic agent"
+      ],
+      "sources": [
+        "01_quickstart.md",
+        "32_quickstart.md",
+        "51_thinking-in-langgraph.md",
+        "49_workflows-agents.md",
+        "01_quickstart.md"
+      ],
+      "trace": [
+        "router: need_retrieval=True（用户询问某个教程涵盖的主要步骤，需要查阅具体教程文档内容才能回答。）",
+        "retrieve: 5 docs（query=该教程涵盖哪些主要步骤？）",
+        "grade: irrelevant（参考资料中没有一处列出或概括该教程涵盖的主要步骤；片段[5]虽提到‘We will show:’但后续内容缺失，其他片段）",
+        "rewrite: 新查询=本教程包含哪些操作步骤与主要流程环节 步骤列表 目录大纲 阶段",
+        "retrieve: 5 docs（query=本教程包含哪些操作步骤与主要流程环节 步骤列表 目录大纲 阶）",
+        "grade: irrelevant（参考资料仅提及个别步骤标题（Step 1: Read the guide 和 Step 4: Implement the）",
+        "generate: 拒答（relevance=irrelevant, retry=1）"
+      ],
+      "elapsed": 26.87358280000626,
+      "refusal": true,
+      "type": "简单事实",
+      "golden": [
+        "12_knowledge-base.md"
+      ],
+      "ground_truth": "从PDF创建Document对象、生成嵌入、加载并拆分PDF、在向量存储中索引块并按相似性查询、将存储包装为检索器。"
+    },
+    {
+      "question": "如果代理生成的SQL命令有错误，会发生什么？",
+      "answer": "根据现有资料无法回答“代理生成的 SQL 命令有错误”这一具体情况，因为参考资料中没有涉及 SQL 命令或 SQL 错误处理。\n\n如果把它一般性地视为“工具执行期间抛出的异常”，资料只说明：Tool error 会捕获工具执行中的异常，并将其转换为模型可见、可恢复的错误 `ToolMessage`，而不是直接中止代理运行 [3]。处理方式包括：\n\n- `'continue'`（默认）：返回包含错误详情的 `ToolMessage`，让 LLM 处理失败 [4]；\n- `'error'`：重新抛出异常，停止代理执行 [4]；\n- 自定义 callable：接收异常并返回字符串，作为 `ToolMessage` 的内容 [4]。\n\n因此，关于 SQL 命令错误的专门行为，根据现有资料无法回答。",
+      "contexts": [
+        "**Purpose:** Search results\n\n          Always `\"server_tool_result\"`\n\n          Identifier of the corresponding server tool call.\n\n          Identifier associated with the server tool result.\n\n          Execution status of the server-side tool. `\"success\"` or `\"error\"`.",
+        "* `'continue'` (default) - Return an `AIMessage` with error details, allowing the agent to potentially handle the failure gracefully\n    * `'error'` - Re-raise the exception (stops agent execution)",
+        "### Tool error\n\nCatch exceptions raised during tool execution and convert them into error `ToolMessage`s that the model can see and recover from, instead of halting the agent run. Tool error is useful for the following:",
+        "* `'continue'` (default) - Return a `ToolMessage` with error details, allowing the LLM to handle the failure\n    * `'error'` - Re-raise the exception, stopping agent execution\n    * Custom callable - Function that takes the exception and returns a string for the `ToolMessage` content",
+        "* `'continue'` (default) - Block exceeded tool calls with error messages, let other tools and the model continue. The model decides when to end based on the error messages.\n    * `'error'` - Raise a `ToolCallLimitExceededError` exception, stopping execution immediately"
+      ],
+      "sources": [
+        "06_messages.md",
+        "16_built-in.md",
+        "16_built-in.md",
+        "16_built-in.md",
+        "16_built-in.md"
+      ],
+      "trace": [
+        "router: need_retrieval=True（该问题涉及代理（如LangChain/LangGraph中的SQL代理）在生成错误SQL命令时的行为、错误处理机制等具体技术细节，需要检索相关技术文档才能准确回答。）",
+        "retrieve: 5 docs（query=如果代理生成的SQL命令有错误，会发生什么？）",
+        "grade: relevant（参考资料片段[3]和[4]描述了工具执行错误的默认处理方式：捕获异常并转换为错误ToolMessage，让模型处理失败而）",
+        "generate: ok（5 docs, relevance=relevant）"
+      ],
+      "elapsed": 28.21694969999953,
+      "refusal": false,
+      "type": "简单事实",
+      "golden": [
+        "13_sql-agent.md"
+      ],
+      "ground_truth": "错误信息会被返回给模型。模型会结合原始请求和新的错误信息，生成一个新的命令。这个过程会持续，直到LLM生成正确的命令。"
+    },
+    {
+      "question": "这种提供反馈的模式有什么作用？",
+      "answer": "根据现有资料，只能部分回答该问题：\n\n**关于反馈的作用，资料 [4] 有明确说明：**\n\n在人机协同（human-in-the-loop）场景中，反馈（`message`）会被加入对话，作用是**帮助智能体理解该操作为何被拒绝，以及它应该改做什么** [4]。如果省略 `message`，中间件会使用一条默认的拒绝消息，告知模型该工具未被执行、且不要重试同一个工具 [4]。\n\n**关于\"提供反馈\"这一模式本身，资料 [2] 仅给出评价：**\n\n资料 [2] 提到，向模型提供反馈（此处指错误消息）的这种模式\"非常强大\"（very powerful）[2]，但该段文字在此处中断，**并未进一步说明其具体作用或机制**。\n\n**结论：**\n\n- 可以确认的作用是：反馈能让智能体理解被拒绝的原因并调整后续行为 [4]。\n- 对于该模式更完整的作用（例如是否提升可靠性、自我纠错能力等），根据现有资料无法回答，资料 [2] 只给出了\"非常强大\"这一笼统评价，缺少展开说明 [2]。",
+      "contexts": [
+        "* Pydantic's recursive validation can be slow. For performance-sensitive applications, you may want to consider using a `dataclass` instead.",
+        "essfully or reaches an end count. This pattern of providing a model with feedback - error messages in this case - is very powerful.",
+        "The quality and capabilities of the model you choose directly impact your agent's baseline reliability and performance. Different models excel at different tasks - some are better at following complex instructions, others at structured reasoning, and some support larger context windows for handling",
+        "The `message` is added to the conversation as feedback to help the agent understand why the action was rejected and what it should do instead. When you omit `message`, the middleware uses a default rejection message that tells the model the tool was not executed and not to retry the same tool c",
+        "## Model context\n\nControl what goes into each model call - instructions, available tools, which model to use, and output format. These decisions directly impact reliability and cost.\n\n    Base instructions from the developer to the LLM."
+      ],
+      "sources": [
+        "35_use-graph-api.md",
+        "13_sql-agent.md",
+        "05_models.md",
+        "20_human-in-the-loop.md",
+        "18_context-engineering.md"
+      ],
+      "trace": [
+        "router: need_retrieval=True（问题询问某种“提供反馈的模式”的作用，属于具体技术概念或设计模式的解释，需要检索 LangChain/LangGraph 技术文档以获取准确说明。）",
+        "retrieve: 5 docs（query=这种提供反馈的模式有什么作用？）",
+        "grade: relevant（片段[4]说明将 message 作为反馈加入对话，可帮助 agent 理解动作被拒绝的原因以及应如何改进；片段[2]也）",
+        "generate: ok（5 docs, relevance=relevant）"
+      ],
+      "elapsed": 15.351371600001585,
+      "refusal": false,
+      "type": "简单事实",
+      "golden": [
+        "13_sql-agent.md"
+      ],
+      "ground_truth": "这种模式很强大，模型可以根据错误信息等反馈不断生成新命令，直到成功或达到结束次数。"
+    },
+    {
+      "question": "中间件可以用于哪些场景？",
+      "answer": "根据现有资料无法回答该问题。（已尝试 2 次检索与查询重写，仍未找到相关资料。）建议：换个更具体的问法，或补充相关文档到语料库。",
+      "contexts": [
+        "* **Browser APIs:** Geolocation, IndexedDB, Clipboard, Canvas 2D, file pickers, Battery API, etc.\n* **Privacy and locality:** Data stays on the device (for example, local “memory” in IndexedDB).\n* **Latency:** No extra server round trip for purely local operations.",
+        "Built-in projections (`stream.messages`, `stream.values`, `stream.subgraphs`, `stream.output`) and product-specific projections (LangChain's `stream.tool_calls`, Deep Agents' `stream.subagents`) are themselves transformers using this same contract. User transformers stack on top via compile-time or",
+        "tream.subgraphs`, and `stream.output`. Custom transformers can add application-specific projections under `stream.extensions`.",
+        "| Data Source | Also Known As | Scope | Examples |\n| - | - | - | - |\n| **Runtime Context** | Static configuration | Conversation-scoped | User ID, API keys, database connections, permissions, environment settings |",
+        "In the Functional API, instead of defining nodes and edges explicitly, you write standard control flow logic (loops, conditionals) within a single function.\n\n    ```python theme={\"theme\":{\"light\":\"catppuccin-latte\",\"dark\":\"catppuccin-mocha\"}}\n    @entrypoint()\n    def agent(messages: list[BaseMessage]):\n        model_response = call_llm(messages).result()\n\n        while True:\n            if not model_response.tool_calls:\n                break\n\n            # Execute tools\n            tool_result_futures = [\n                call_tool(tool_call) for tool_call in model_response.tool_calls\n            ]\n            tool_results = [fut.result() for fut in tool_result_futures]\n            messages = add_messages(messages, [model_response, *tool_results])\n            model_response = call_llm(messages).result()\n\n        messages = add_messages(messages, model_response)\n        return messages\n\n    # Invoke\n    messages = [HumanMessage(content=\"Add 3 and 4.\")]\n    stream = agent.stream_events(messages, version=\"v3\")\n    for snapshot in stream.values:\n        print(snapshot)\n        print(\"\\n\")\n    ```"
+      ],
+      "sources": [
+        "07_tools.md",
+        "44_event-streaming.md",
+        "44_event-streaming.md",
+        "18_context-engineering.md",
+        "32_quickstart.md"
+      ],
+      "trace": [
+        "router: need_retrieval=True（问题涉及具体技术概念“中间件”的适用场景，需要查阅 LangChain/LangGraph 相关技术文档才能准确回答。）",
+        "retrieve: 5 docs（query=中间件可以用于哪些场景？）",
+        "grade: irrelevant（所有片段均围绕事件流（event streaming）、流处理层、多智能体模式、流转换器（transformers）及前）",
+        "rewrite: 新查询=中间件应用场景与典型使用案例：消息队列、API网关、应用服务器、事务中间件、分布",
+        "retrieve: 5 docs（query=中间件应用场景与典型使用案例：消息队列、API网关、应用服务）",
+        "grade: irrelevant（参考资料中没有任何片段提及“中间件”或 middleware 相关概念，也未说明中间件的使用场景，因此无法回答用户问题。）",
+        "generate: 拒答（relevance=irrelevant, retry=1）"
+      ],
+      "elapsed": 20.599431999988155,
+      "refusal": true,
+      "type": "简单事实",
+      "golden": [
+        "15_overview.md"
+      ],
+      "ground_truth": "中间件可用于追踪代理行为（日志、分析、调试）、转换提示词和输出格式，以及添加重试、回退和提前终止逻辑。"
+    },
+    {
+      "question": "在LangGraph工作流中使用中间件时，中间件是作为独立运行时运行的吗？",
+      "answer": "根据现有资料无法回答该问题。（已尝试 2 次检索与查询重写，仍未找到相关资料。）建议：换个更具体的问法，或补充相关文档到语料库。",
+      "contexts": [
+        "/langgraph/interrupts) or a [retry](/oss/python/langgraph/fault-tolerance#retries)), the affected **node** runs again from the start of its function. Code and side effects before the pause run again.",
+        "A Functional API **entrypoint** compiles to a single **node** that replays the entrypoint body from the beginning when a run resumes, using cached [`@task`](https://reference.langchain.com/python/langgraph/func/task) results to skip work that has already been done. Two kinds of changes break this m",
+        "When you compile with a [checkpointer](/oss/python/langgraph/persistence), LangGraph saves checkpoints at [super-step](#graphs) boundaries, not mid-function inside a node. If execution stops and later resumes (for example after an [interrupt](/oss/python/langgraph/interrupts) or a [retry](/oss/pyth",
+        "`Command(resume=...)` is the **only** `Command` pattern intended as input to `invoke()`/`stream()`/`stream_events()`. The other `Command` parameters (`update`, `goto`, `graph`) are designed for [returning from node functions](/oss/python/langgraph/graph-api#command). Do not pass `Command(update=.",
+        "/reference.langchain.com/python/langgraph/types/Command) object from node functions:"
+      ],
+      "sources": [
+        "34_graph-api.md",
+        "61_backward-compatibility.md",
+        "34_graph-api.md",
+        "45_interrupts.md",
+        "35_use-graph-api.md"
+      ],
+      "trace": [
+        "router: need_retrieval=True（该问题涉及 LangGraph 工作流中中间件的运行机制，属于具体技术概念和框架行为，需要查阅相关技术文档才能准确回答。）",
+        "retrieve: 5 docs（query=在LangGraph工作流中使用中间件时，中间件是作为独立运）",
+        "grade: irrelevant（所有参考资料均未提及中间件（middleware）或其运行方式，仅涉及LangGraph运行时、事件流和节点超时等主题，）",
+        "rewrite: 新查询=LangGraph 节点的回调 callbacks、钩子 hooks、拦截器 i",
+        "retrieve: 5 docs（query=LangGraph 节点的回调 callbacks、钩子 h）",
+        "grade: irrelevant（所有参考资料片段均未提及‘中间件’（middleware）或其在LangGraph工作流中的运行方式，无法回答中间件是否）",
+        "generate: 拒答（relevance=irrelevant, retry=1）"
+      ],
+      "elapsed": 19.339217600005213,
+      "refusal": true,
+      "type": "简单事实",
+      "golden": [
+        "15_overview.md"
+      ],
+      "ground_truth": "不是。中间件不是在单独运行时中运行，其钩子在create_agent返回的编译后的LangGraph内部执行。可以将整个代理（包括中间件）作为节点或子图放入更大的StateGraph中，所有中间件钩子会继续运行。"
+    }
+  ]
+}
