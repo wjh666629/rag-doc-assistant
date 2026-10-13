@@ -4,7 +4,7 @@
 
 **仓库**：https://github.com/wjh666629/rag-doc-assistant ｜ **复盘文章**：https://rag-7days-retrospective.app.workbuddy.host/
 
-> 诚实声明：本项目为 7 天求职作品（时间线与每日决策见文末 Timeline），开发过程使用 AI 编程助手辅助，AI 工具的使用边界见 [docs/ai_usage.md](docs/ai_usage.md)。
+> 诚实声明：本项目为 7 天从 0 做完的项目（时间线与每日决策见文末 Timeline），开发过程使用 AI 编程助手辅助，AI 工具的使用边界见 [docs/ai_usage.md](docs/ai_usage.md)。
 
 ---
 
