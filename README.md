@@ -20,6 +20,14 @@ python -m src.agent.graph
 执行路径: router → retrieve(5 docs) → grade(relevant) → generate
 ```
 
+Streamlit Demo（侧边栏展示当前配置与最新评估指标）：
+
+![Streamlit 界面](docs/screenshots/01_ui_overview.png)
+
+一次完整问答：带编号引用、引用来源可展开、CRAG 执行轨迹（router → retrieve → grade → generate）：
+
+![问答演示](docs/screenshots/02_qa_with_sources.png)
+
 越界问题实测路径（router → retrieve → grade(irrelevant) → **rewrite** → retrieve → grade(irrelevant) → **拒答**）见 [docs/graph_paths.md](docs/graph_paths.md)。
 
 ## 架构

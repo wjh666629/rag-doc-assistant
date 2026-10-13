@@ -20,3 +20,10 @@ models/
 
 # 评估 LLM 响应缓存（可再生成）
 eval/.cache/
+
+# 文章发布构建产物（源文件 docs/article.md）
+publish/
+
+# WorkBuddy 应用发布标记与本地会话
+.wbapp_*.genie
+.playwright-cli/
