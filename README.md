@@ -2,6 +2,8 @@
 
 基于 LangGraph 的中文技术文档问答系统，**自带 RAG 自动化评估流水线**（CRAG：路由 → 检索 → 相关性打分 → 查询重写 → 生成，循环最多 1 次）。
 
+**仓库**：https://github.com/wjh666629/rag-doc-assistant ｜ **复盘文章**：https://rag-7days-retrospective.app.workbuddy.host/
+
 > 诚实声明：本项目为 7 天求职作品（时间线与每日决策见文末 Timeline），开发过程使用 AI 编程助手辅助，AI 工具的使用边界见 [docs/ai_usage.md](docs/ai_usage.md)。
 
 ---
@@ -127,7 +129,7 @@ rag-doc-assistant/
 │   └── reports/                # 报告（文件名含 commit hash，可追溯）
 ├── scripts/                    # Day 1 验证脚本 + fetch_docs / chatbot_lcel 等
 ├── tests/                      # pytest（节点 + 指标，全绿）
-└── docs/                       # pitfalls.md(15 条) / eval_analysis.md / notes/
+└── docs/                       # pitfalls.md(17 条) / eval_analysis.md / notes/
 ```
 
 ## 技术选型理由
