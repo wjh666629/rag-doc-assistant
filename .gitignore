@@ -27,3 +27,6 @@ publish/
 # WorkBuddy 应用发布标记与本地会话
 .wbapp_*.genie
 .playwright-cli/
+
+# WorkBuddy 本地工作区数据
+.workbuddy/
